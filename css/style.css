@@ -148,13 +148,13 @@ body {
 }
 
 .nav-login:hover {
-  color: #2B5794;                /* action blue */
-  background-color: #E6FFFA;     /* very light teal */
+  color: #2B5794;                
+  background-color: #E6FFFA;     
 }
 
 
 .nav-cta {
-  background-color: #2DD4BF;     /* Nest teal */
+  background-color: #2DD4BF;     
   color: #003b3d;
   padding: 10px 20px;
   border-radius: 8px;
@@ -165,7 +165,7 @@ body {
 
 /* Hover effect */
 .nav-cta:hover {
-  background-color: #22C1AE;     /* darker teal */
+  background-color: #22C1AE;     
   box-shadow: 0 8px 20px rgba(45, 212, 191, 0.45);
   transform: translateY(-1px);
 }
@@ -223,15 +223,25 @@ body {
   font-weight: 600;
 }
 
-/* HERO IMAGE */
-.hero-visual {
-  position: relative;
+/* Hero-Video */
+.hero-video {
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 16 / 9;    
+    overflow: hidden;
+  border-radius: 20px;
+  background: transparent; 
 }
 
-.hero-visual img {
+.hero-video video {
   width: 100%;
-  border-radius: 12px;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
+
+
+
 
 /* FLOATING VERIFICATION CARDS */
 .verify-card {
