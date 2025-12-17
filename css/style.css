@@ -97,7 +97,7 @@ body {
 }
 
 .brand-text .fact {
-  color: #0a2540;  
+  color: #2B5794;  
 }
 
 .brand-text .nest {
@@ -105,14 +105,32 @@ body {
    
 }
 
+.nav-links{
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.nav-links a.active {
+  font-weight: 600;
+}
 
 
 .nav-links a {
-  margin: 0 15px;
   text-decoration: none;
-  color: #374151;
+  color: #2B5794;
   font-weight: 500;
+  padding: 6px 4px;
+  position: relative;
+  transition: color 0.2s ease;
 }
+
+/* Hover effect */
+.nav-links a:hover {
+   color: #2dd4bf; 
+
+}
+
 
 .nav-actions {
   display: flex;
@@ -120,20 +138,38 @@ body {
 }
 
 .nav-login {
-  margin-right: 20px;
+  color: #2B5794;  
+  
   text-decoration: none;
-  color: #2563eb;
   font-weight: 500;
+  padding: 8px 10px;
+  border-radius: 6px;
+  transition: all 0.25s ease;
 }
 
+.nav-login:hover {
+  color: #2B5794;                /* action blue */
+  background-color: #E6FFFA;     /* very light teal */
+}
+
+
 .nav-cta {
-  background: #2dd4bf;
+  background-color: #2DD4BF;     /* Nest teal */
   color: #003b3d;
-  padding: 10px 18px;
-  border-radius: 6px;
+  padding: 10px 20px;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
+  transition: all 0.25s ease;
 }
+
+/* Hover effect */
+.nav-cta:hover {
+  background-color: #22C1AE;     /* darker teal */
+  box-shadow: 0 8px 20px rgba(45, 212, 191, 0.45);
+  transform: translateY(-1px);
+}
+
 
 /* HERO */
 .hero-section {
