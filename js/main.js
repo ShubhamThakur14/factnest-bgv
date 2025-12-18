@@ -16,6 +16,7 @@ elements.forEach(el => observer.observe(el));
 const slider = document.getElementById('servicesSlider');
 
 if (slider) {
+
   function slideLeft() {
     slider.scrollBy({ left: -380, behavior: 'smooth' });
   }
@@ -23,6 +24,7 @@ if (slider) {
   function slideRight() {
     slider.scrollBy({ left: 380, behavior: 'smooth' });
   }
+
+
+
 }
-
-
