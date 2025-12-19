@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // === Slider animation ======
-  
+
   const slider = document.getElementById('servicesSlider');
 
   if (slider) {
