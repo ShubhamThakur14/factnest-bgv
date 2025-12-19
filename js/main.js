@@ -1,30 +1,32 @@
-const elements = document.querySelectorAll('.fade-up');
+document.addEventListener('DOMContentLoaded', () => {
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
-  });
-}, { threshold: 0.2 });
+  const elements = document.querySelectorAll('.fade-up');
 
-elements.forEach(el => observer.observe(el));
+  if (elements.length) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
 
-
-// For USING Slider in SERVICE-SECTION 
-
-const slider = document.getElementById('servicesSlider');
-
-if (slider) {
-
-  function slideLeft() {
-    slider.scrollBy({ left: -380, behavior: 'smooth' });
+    elements.forEach(el => observer.observe(el));
   }
 
-  function slideRight() {
-    slider.scrollBy({ left: 380, behavior: 'smooth' });
+  // === Slider animation ======
+  
+  const slider = document.getElementById('servicesSlider');
+
+  if (slider) {
+    window.slideLeft = () => {
+      slider.scrollBy({ left: -380, behavior: 'smooth' });
+    };
+
+    window.slideRight = () => {
+      slider.scrollBy({ left: 380, behavior: 'smooth' });
+    };
   }
 
-
-
-}
+});
