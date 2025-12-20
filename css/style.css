@@ -105,8 +105,11 @@ body {
 
 
 .nav-actions {
+
   display: flex;
   align-items: center;
+  gap: 16px;
+
 }
 
 .nav-login {
@@ -625,4 +628,16 @@ body {
 
 .footer-links a:hover {
   color: #ffffff;
+}
+
+
+/* Disable text selection everywhere (safe for UI) */
+* {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+/* Allow selection only where needed (optional) */
+p, input, textarea {
+  user-select: text;
 }

@@ -4,30 +4,77 @@
   <meta charset="UTF-8">
   <title>FactNest | Background Verification Services</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/Responsive.css">
 </head>
 <body>
 
   <!-- NAVBAR -->
 <header class="top-nav">
   <div class="nav-container">
-    <a href="index.html" class="nav-logo">
-  <img src="img/logo Head.PNG" alt="FactNest">
-  <span class="brand-text">
-    <span class="fact">Fact</span><span class="nest">Nest</span>
-  </span>
-</a>
 
-    <nav class="nav-links">
+    <!-- Logo -->
+    <a href="index.html" class="nav-logo">
+      <img src="img/logo Head.PNG" alt="FactNest">
+      <span class="brand-text">
+        <span class="fact">Fact</span><span class="nest">Nest</span>
+      </span>
+    </a>
+
+    <!-- DESKTOP NAV -->
+    <nav class="nav-links desktop-only">
       <a href="#" class="active">Home</a>
-      <a href="#">Services</a>
+
+      <div class="desktop-dropdown">
+        <span>Services ▾</span>
+        <div class="desktop-dropdown-menu">
+          <a href="#">Identity Verification</a>
+          <a href="#">Address Verification</a>
+          <a href="#">Employment Verification</a>
+          <a href="#">Education Verification</a>
+          <a href="#">Criminal Check</a>
+          <a href="#">Credit Check</a>
+        </div>
+      </div>
+
       <a href="#">About us</a>
-      <a href="#">Partners</a>
+      <a href="#">Contact Us</a>
     </nav>
 
-    <div class="nav-actions">
-      <a href="login.html" class="nav-login">Sign in</a>
+    <!-- DESKTOP ACTIONS -->
+    <div class="nav-actions desktop-only">
+      <a href="#" class="nav-login">Sign in</a>
       <a href="#" class="nav-cta">Book a demo</a>
     </div>
+
+    <!-- HAMBURGER -->
+    <div class="menu-toggle" id="menuToggle">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU (SEPARATE, CLEAN) -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#">Home</a>
+
+    <div class="mobile-dropdown">
+      <button class="dropdown-toggle">
+        Services <span class="arrow">▾</span>
+      </button>
+      <div class="dropdown-menu">
+        <a href="#">Identity Verification</a>
+        <a href="#">Address Verification</a>
+        <a href="#">Employment Verification</a>
+        <a href="#">Education Verification</a>
+        <a href="#">Criminal Check</a>
+        <a href="#">Credit Check</a>
+      </div>
+    </div>
+
+    <a href="#">About us</a>
+    <a href="#">Contact Us</a>
+
+    <a href="#" class="mobile-cta primary">Book a demo</a>
+    <a href="#" class="mobile-cta outline">Sign in</a>
   </div>
 </header>
 
@@ -344,7 +391,7 @@ We help companies verify employees with complete accuracy and end-to-end confide
   </div>
 
   <div class="footer-bottom">
-    <p>© 2025 FactNest. All rights reserved.</p>
+    <p>© 2025 FactNest.Pvt.Lmt All rights reserved.</p>
     <div class="footer-links">
       <a href="#">Privacy Policy</a>
       <a href="#">Terms</a>
