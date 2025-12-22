@@ -3,11 +3,91 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+@media (max-width: 1024px) {
+  body {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+
+  h1 { font-size: 42px; }
+  h2 { font-size: 34px; }
+  h3 { font-size: 22px; }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 17px;
+  }
+
+  h1 { font-size: 36px; }
+  h2 { font-size: 30px; }
+  h3 { font-size: 20px; }
+
+  p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+}
+
+
+/* === tablet ==== */
+@media (max-width: 1024px) {
+
+  .nav-logo img {
+    height: 40px;
+  }
+
+  .brand-text {
+    font-size: 26px;
+  }
+
+  .menu-toggle {
+    width: 32px;
+    height: 26px;
+  }
+}
+
+
+/* === Mobile  === */
+@media (max-width: 768px) {
+
+  .nav-logo img {
+    height: 44px;
+  }
+
+  .nav-container{
+    justify-content: space-evenly;
+  }
+
+  .brand-text {
+    font-size: 28px;
+  }
+
+  .menu-toggle {
+    width: 36px;
+    height: 28px;
+  }
+
+  .menu-toggle span {
+    height: 3.5px;
+  }
+}
+
+
+
+
 /* ================= HAMBURGER ================= */
 .menu-toggle {
   display: none;
   width: 28px;
   height: 22px;
+   padding: 8px;
   position: relative;
   cursor: pointer;
 }
@@ -80,7 +160,7 @@
 
 /* ================= MOBILE MENU BASE ================= */
 .mobile-menu {
-  display: none; /* 🔒 CLOSED BY DEFAULT */
+  display: none; 
 }
 
 /* ================= MOBILE / TABLET ================= */
@@ -98,14 +178,14 @@
 
   /* mobile menu wrapper */
   .mobile-menu {
-    position: absolute;
+    position: fixed;
     top: 67px;
     left: 0;
     width: 100%;
     background: #ffffff;
     padding: 24px;
     border-bottom: 1px solid #e5e7eb;
-    z-index: 999;
+    z-index: 2000;
     display: none;
     flex-direction: column;
     align-items: center;
@@ -218,3 +298,26 @@
     display: none !important;
   }
 }
+
+body.menu-open {
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+
+  .hero-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* Video upar */
+  .hero-video {
+    order: -1;
+  }
+
+  /* Text niche */
+  .hero-content {
+    order: 1;
+  }
+
+}
+
