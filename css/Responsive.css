@@ -1,7 +1,6 @@
 /* ================= GLOBAL FIX ================= */
 * {
   -webkit-tap-highlight-color: transparent;
-  user-select: none;
 }
 
 /* ================= HAMBURGER ================= */
@@ -44,22 +43,52 @@
   display: flex;
 }
 
-/* ================= MOBILE ================= */
-.mobile-menu {
-  display: none;            /* 🔒 CLOSED BY DEFAULT */
+/* desktop dropdown (click based) */
+.desktop-dropdown {
+  position: relative;
 }
 
-.mobile-menu.active {
-  display: flex;            /* 🔓 OPEN ONLY VIA JS */
-  flex-direction: column;
+.desktop-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 130%;
+  left: 0;
+  background: #ffffff;
+  min-width: 260px;
+  border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.desktop-dropdown-menu a {
+  display: block;
+  padding: 10px 18px;
+  font-size: 15px;
+  color: #0a2540;
+  text-decoration: none;
+  white-space: normal;
+}
+
+.desktop-dropdown-menu a:hover {
+  background: #f1f5f9;
+}
+
+.desktop-dropdown.active .desktop-dropdown-menu {
+  display: block;
+}
+
+/* ================= MOBILE MENU BASE ================= */
+.mobile-menu {
+  display: none; /* 🔒 CLOSED BY DEFAULT */
 }
 
 /* ================= MOBILE / TABLET ================= */
 @media (max-width: 1024px) {
 
-  /* hide desktop */
+  /* hide desktop completely */
   .desktop-only {
-    display: none;
+    display: none !important;
   }
 
   /* show hamburger */
@@ -67,7 +96,7 @@
     display: block;
   }
 
-  /* mobile menu container */
+  /* mobile menu wrapper */
   .mobile-menu {
     position: absolute;
     top: 67px;
@@ -77,48 +106,54 @@
     padding: 24px;
     border-bottom: 1px solid #e5e7eb;
     z-index: 999;
+    display: none;
+    flex-direction: column;
     align-items: center;
     gap: 18px;
   }
 
-  /* menu links */
+  .mobile-menu.active {
+    display: flex;
+  }
+
+  /* common menu buttons */
   .mobile-menu > a,
-  .mobile-dropdown .dropdown-toggle {
+  .mobile-dropdown > .dropdown-toggle {
     width: 100%;
     max-width: 320px;
-    text-align: center;
     padding: 14px;
     border: 1px solid #e2e8f0;
     border-radius: 10px;
-    font-weight: 600;
     font-size: 16px;
+    font-weight: 600;
     color: #1f4fa3;
     background: #ffffff;
+    text-align: center;
     text-decoration: none;
     transition: all 0.25s ease;
   }
 
   .mobile-menu > a:hover,
-  .mobile-dropdown .dropdown-toggle:hover {
+  .mobile-dropdown > .dropdown-toggle:hover {
     background: #e6fffb;
     border-color: #2dd4bf;
     color: #0f766e;
   }
 
-  /* services dropdown */
+  /* ================= SERVICES (ACCORDION) ================= */
   .mobile-dropdown {
     width: 100%;
     max-width: 320px;
   }
 
   .dropdown-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 6px;
-    background: none;
-    border: none;
-    cursor: pointer;
   }
 
   .arrow {
@@ -137,6 +172,7 @@
     margin-top: 10px;
     padding-left: 14px;
     border-left: 2px solid #2dd4bf;
+    width: 100%;
   }
 
   .mobile-dropdown.active .dropdown-menu {
@@ -147,9 +183,14 @@
     font-size: 14.5px;
     color: #475569;
     text-decoration: none;
+    text-align: center;
   }
 
-  /* CTA buttons */
+  .dropdown-menu a:hover {
+    color: #2dd4bf;
+  }
+
+  /* ================= CTA BUTTONS ================= */
   .mobile-cta {
     width: 100%;
     max-width: 320px;
@@ -168,5 +209,12 @@
   .mobile-cta.outline {
     border: 1px solid #2dd4bf;
     color: #2dd4bf;
+  }
+}
+
+/* ================= SAFETY ================= */
+@media (min-width: 1025px) {
+  .mobile-menu {
+    display: none !important;
   }
 }

@@ -103,6 +103,17 @@ body {
 
 }
 
+/* Desktop Services color fix */
+.desktop-dropdown > span {
+  color: #2B5794;
+  font-weight: 500;
+}
+
+.desktop-dropdown > span:hover {
+  color: #2dd4bf;
+}
+
+
 
 .nav-actions {
 
