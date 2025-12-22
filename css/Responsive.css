@@ -321,3 +321,619 @@ body.menu-open {
 
 }
 
+@media (max-width: 768px) {
+  .service-card {
+    min-width: 280px;   /* 👈 360 se kam */
+  }
+}
+
+
+@media (max-width: 768px) {
+  .services-slider {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+
+/* =======  Hero SEction =========== */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 44px 0 40px;   
+
+  }
+}
+@media (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 14px;              
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .hero-video {
+    height: 180px;          
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .hero-video video {
+    width: 100%;
+    height: 96%;
+    object-fit: contain;
+    background: #ffffff;
+  }
+}
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 30px;
+    line-height: 1.22;
+    margin-bottom: 6px;
+  }
+}
+@media (max-width: 768px) {
+  .hero-content p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+
+  .hero-buttons .btn-primary {
+    padding: 10px 18px;   
+    font-size: 14.5px;
+    border-radius: 6px;
+  }
+
+  .hero-content p {
+    max-width: 100%;      
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;   
+  }
+}
+
+/* HERO TABLETS  */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-section{
+    padding: 10px 50px;
+  }
+  .hero-content h1 {
+    font-size: 38px;
+  }
+  .hero-content p{
+        font-size: 16px;
+  }
+  .btn-primary{
+    padding: 8px 16px;
+  }
+}
+
+
+
+
+
+/* ==== Our SErvices  */
+@media (max-width: 768px) {
+  .services-section {
+    
+    padding-left:50px ;
+    padding-right: 50px;
+     padding-top: 12px;
+    padding-bottom: 22px;
+    border-top-left-radius: 36px;
+    border-top-right-radius: 36px;
+    overflow: hidden;
+  
+  }
+   .services-section .section-title {
+    font-size: 28px;
+    margin-bottom: 24px;
+    text-align: left;
+    margin-left: 0;
+  }
+    .services-slider {
+    gap: 18px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+     .service-card {
+    min-width: 100%;
+    max-width: 100%;
+    padding: 16px 18px;
+    border-radius: 16px;
+  }
+   .service-card .icon {
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+
+  .service-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .service-card p {
+    font-size: 14.5px;
+    line-height: 1.55;
+  }
+   .service-link {
+    margin-top: 16px;
+    font-size: 14px;
+  }
+}
+
+
+/* ---- Our Services for Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .section-title{
+    font-size: 36px;
+  }
+      .service-card {
+        min-width: 386px;
+    }
+}
+
+
+
+/* ===== Why Factnest */
+@media (max-width: 768px) {
+  .why-section{
+    padding: 15px 60px;
+  }
+  .why-wrapper {
+    grid-template-columns: 1fr;
+    gap: 1px;
+  }
+
+   .why-left {
+    padding-left: 0;
+  }
+
+  .why-left::before {
+    display: none;   /* blue vertical line remove */
+  }
+
+  .why-title {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .why-subtitle {
+    font-size: 15.5px;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+
+  .why-right {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+   .why-item {
+    
+    padding: 0px 16px;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  }
+   .why-item h4 {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .why-item p {
+    font-size: 14.5px;
+    line-height: 1.55;
+  }
+}
+
+
+/* ==== For Tablet use  */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  /* ===== Section padding ===== */
+  .why-section {
+    padding: 28px 40px;
+  }
+
+  /* ===== Grid spacing ===== */
+  .why-wrapper {
+    gap: 48px;   /* pehle zyada lag raha tha */
+  }
+
+  /* ===== Left content ===== */
+  .why-title {
+    font-size: 36px;   /* desktop 44px → tablet 36px */
+    line-height: 1.2;
+    margin-bottom: 10px;
+    
+  }
+
+  .why-subtitle {
+    font-size: 16.5px;
+    line-height: 1.6;
+    max-width: 360px;
+  }
+
+  /* ===== Vertical accent line ===== */
+  .why-left::before {
+    height: 75%;
+  }
+
+  /* ===== Right cards grid ===== */
+  .why-right {
+    gap: 28px 32px;
+  }
+
+  /* ===== Individual item ===== */
+  .why-item {
+    padding: 18px 20px;
+     margin-bottom: 12px;
+  }
+
+  .why-item h4 {
+    font-size: 17px;
+    margin-bottom: 6px;
+  }
+
+  .why-item p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+/* ==== About Section ==== */
+@media (max-width: 768px) {
+  .about-strong {
+    padding: 12px 50px;
+  }
+
+  .about-heading {
+    font-size: 28px;
+    margin-bottom: 14px;
+  }
+
+  .about-statement {
+    font-size: 15.5px;
+    line-height: 1.6;
+    
+  }
+
+   .about-highlights {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+   .about-highlight h4 {
+    font-size: 17px;
+    margin-bottom: 0px;
+  }
+
+  .about-highlight p {
+    font-size: 14.5px;
+    line-height: 1.55;
+  }
+
+  
+}
+@media (max-width: 768px) {
+
+  /* kill extra vertical height */
+  .about-highlight {
+    padding-top: 10px;
+    min-height: auto;
+  }
+
+  /* animation div spacing control */
+  .about-highlight.fade-up {
+    transform: none;
+  }
+
+  /* heading tight */
+  .about-highlight h4 {
+    margin: 0 0 4px 0;
+    line-height: 1.25;
+  }
+
+  /* paragraph tight */
+  .about-highlight p {
+    margin: 0;
+    line-height: 1.45;
+  }
+
+  /* grid gap ultra compact */
+  .about-highlights {
+    gap: 10px;
+  }
+}
+
+/* === For tablet About section */
+/* ================= ABOUT SECTION – TABLET ================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  /* section padding kam */
+  .about-strong {
+    padding: 48px 40px;
+  }
+
+  /* heading thoda chota */
+  .about-heading {
+    font-size: 36px;
+    margin-bottom: 18px;
+  }
+
+  /* main paragraph */
+  .about-statement {
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-bottom: 36px;
+  }
+
+  /* highlights grid spacing */
+  .about-highlights {
+    gap: 36px;
+  }
+
+  /* highlight title */
+  .about-highlight h4 {
+    font-size: 17px;
+    margin-bottom: 6px;
+  }
+
+  /* highlight text */
+  .about-highlight p {
+    font-size: 14.5px;
+    line-height: 1.55;
+  }
+}
+
+/* === Compilance SEction */
+/* ========== COMPLIANCE – MOBILE STACKED LAYOUT ========== */
+@media (max-width: 768px) {
+
+  .compliance-wrapper {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* left content upar */
+  .compliance-left {
+    order: 1;
+  }
+
+  /* right content niche */
+  .compliance-right {
+    order: 2;
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  /* size tuning */
+  .compliance-section {
+    padding: 32px 20px;
+  }
+
+  .compliance-title {
+    font-size: 26px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .compliance-lead {
+    font-size: 15px;
+    line-height: 1.55;
+    margin-bottom: 8px;
+  }
+
+  .compliance-note {
+    font-size: 14px;
+  }
+
+  .compliance-item h4 {
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  .compliance-item p {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+  .compliance-item p {
+    display: none;
+  }
+
+  .compliance-item h4 {
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+
+  .compliance-item {
+    padding: 0px 14px;
+  }
+  .compliance-wrapper{
+    gap: 5px;
+  }
+}
+
+/* === footer === */
+
+/* ================= TABLET (721px – 1024px) ================= */
+@media (max-width: 1024px) {
+
+  .footer {
+    padding: 60px 0 24px;
+  }
+
+  .footer-container {
+    padding: 0 32px;
+    gap: 40px;
+    grid-template-columns: 2fr 1.2fr 1.2fr 1.4fr;
+  }
+
+  .footer-desc {
+    font-size: 14px;
+    max-width: 320px;
+    line-height: 1.6;
+  }
+
+  .footer-col h4 {
+    font-size: 16px;
+    margin-bottom: 16px;
+    letter-spacing: 0.06em;
+  }
+
+  .footer-col ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-col ul li a {
+    font-size: 14px;
+  }
+
+  .footer-cta {
+    padding: 22px;
+    border-radius: 14px;
+  }
+
+  .footer-cta h3 {
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+
+  .footer-btn {
+    padding: 8px 12px;
+        font-size: 12px;
+  }
+
+  .footer-contact {
+    margin-top: 14px;
+    font-size: 13px;
+  }
+
+  .footer-bottom {
+    padding: 18px 32px 0;
+    font-size: 13px;
+  }
+}
+
+/* ================= SMALL TABLET (600px – 720px) ================= */
+@media (max-width: 720px) {
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  /* CTA goes full width */
+  .footer-cta {
+    grid-column: 1 / -1;
+    max-width: 420px;
+    margin: 16px auto 0;
+    padding: 18px;
+  }
+
+  .footer-cta h3 {
+    font-size: 18px;
+  }
+
+  .footer-btn {
+    padding: 11px;
+    font-size: 14px;
+  }
+
+  .footer-desc {
+    max-width: 420px;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  .footer-bottom {
+    margin-top: 36px;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* ================= MOBILE (≤768px) ================= */
+@media (max-width: 768px) {
+
+  .footer {
+    padding: 48px 0 20px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 0 16px;
+    text-align: center;
+  }
+
+  /* Show only brand + CTA */
+  .footer-col:nth-child(2),
+  .footer-col:nth-child(3) {
+    display: none;
+  }
+
+  .footer-desc {
+    font-size: 13px;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+
+  .footer-cta {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .footer-cta h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .footer-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  /* Contact single line */
+  .footer-contact {
+    margin-top: 4px;
+    font-size: 11px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+
+  .footer-bottom {
+    margin-top: 24px;
+    padding-top: 14px;
+    font-size: 12px;
+    text-align: center;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .footer-links a {
+    font-size: 12px;
+    margin: 0 6px;
+  }
+}
+
+
+
+
+
+
+
+
+
