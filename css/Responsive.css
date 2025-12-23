@@ -760,7 +760,6 @@ body.menu-open {
     gap: 5px;
   }
 }
-
 /* === footer === */
 
 
@@ -821,8 +820,129 @@ body.menu-open {
   .footer-links a {
     margin: 0 8px;
   }
+
+  html { font-size: 13.5px; }
+
+  /* ===== clean footer (mobile) ===== */
+
+  .clean-footer {
+    padding: 2.5rem 1.25rem 2rem;
+    margin: 2rem 1rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  }
+
+  .clean-footer-container {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+    text-align: center;
+  }
+
+  /* Hide link columns on mobile */
+  .footer-links {
+    display: none;
+  }
+
+  /* Brand */
+  .footer-logo {
+    justify-content: center;
+    font-size: 1.25rem;
+  }
+
+  .footer-brand p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 20rem;
+    margin: 0.75rem auto 0;
+  }
+
+  /* Social icons */
+  .footer-social {
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.75rem;
+  }
+
+  .footer-social a {
+    font-size: 1rem;
+  }
+
+  /* Bottom bar */
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.6rem;
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+  }
+
+  .bottom-links a {
+    margin: 0 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  /* ===== second mobile variation (same order preserved) ===== */
+
+  .clean-footer {
+    padding: 3.5rem 1.5rem 3rem;
+    margin: 3rem 1.25rem;
+    border-radius: 2rem;
+  }
+
+  .clean-footer-container {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+    text-align: center;
+  }
+
+  /* Logo */
+  .footer-logo {
+    justify-content: center;
+    font-size: 1.5rem;
+  }
+
+  .footer-logo img {
+    height: 2.4rem;
+  }
+
+  /* Brand text */
+  .footer-brand p {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    max-width: 22rem;
+    margin: 1rem auto 0;
+  }
+
+  /* Social icons */
+  .footer-social {
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 1.2rem;
+  }
+
+  .footer-social a {
+    font-size: 1.15rem;
+  }
+
+  /* Bottom */
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.9rem;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+  }
+
+  .bottom-links a {
+    margin: 0 0.75rem;
+    font-size: 0.9rem;
+  }
 }
 
+
+/* ================= TABLET & BELOW ================= */
 @media (max-width: 1024px) {
 
   .footer {
@@ -852,7 +972,123 @@ body.menu-open {
   .footer-desc {
     font-size: 14px;
   }
+
+  html { font-size: 14.5px; }
 }
+
+
+/* ================= TABLET ONLY ================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .clean-footer {
+    padding: 3.5rem 3rem 2.5rem;
+    margin: 3rem 2rem;
+  }
+
+  .clean-footer-container {
+    grid-template-columns: 1.8fr 1fr 1fr;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+
+  /* Brand block */
+  .footer-brand p {
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.65;
+    max-width: 20rem;
+  }
+
+  .footer-social {
+    margin-top: 1.2rem;
+    gap: 1rem;
+  }
+
+  /* Column headings */
+  .footer-links h4 {
+    margin-bottom: 1rem;
+  }
+
+  /* Links spacing */
+  .footer-links a {
+    margin-bottom: 0.65rem;
+    line-height: 1.5;
+  }
+
+  /* Bottom bar */
+  .footer-bottom {
+    margin-top: 2.5rem;
+    padding-top: 1.2rem;
+    font-size: 0.85rem;
+  }
+}
+
+
+/* ================= FOOTER – TABLET SAME AS MOBILE ================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .clean-footer {
+    padding: 3.5rem 2rem 3rem;
+    margin: 3rem 2rem;
+    border-radius: 2rem;
+  }
+
+  .clean-footer-container {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+    text-align: center;
+  }
+
+  /* Hide all link columns */
+  .footer-links {
+    display: none;
+  }
+
+  /* Center logo */
+  .footer-logo {
+    justify-content: center;
+    font-size: 1.75rem;
+  }
+
+  .footer-logo img {
+    height: 2.4rem;
+  }
+
+  /* Brand text */
+  .footer-brand p {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    max-width: 22rem;
+    margin: 1rem auto 0;
+  }
+
+  /* Social icons */
+  .footer-social {
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 1.2rem;
+  }
+
+  .footer-social a {
+    font-size: 1.15rem;
+  }
+
+  /* Bottom bar */
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.9rem;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+  }
+
+  .bottom-links a {
+    margin: 0 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
 
 
 
