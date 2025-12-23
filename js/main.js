@@ -23,8 +23,17 @@ document.addEventListener("DOMContentLoaded", () => {
   if (menuToggle && mobileMenu) {
     menuToggle.addEventListener("click", (e) => {
       e.stopPropagation();
+
+      const isOpen = mobileMenu.classList.toggle("active");
       menuToggle.classList.toggle("active");
-      mobileMenu.classList.toggle("active");
+
+      if (isOpen) {
+        document.body.classList.add("menu-open");
+        document.documentElement.classList.add("menu-open");
+      } else {
+        document.body.classList.remove("menu-open");
+        document.documentElement.classList.remove("menu-open");
+      }
     });
   }
 
@@ -38,6 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ) {
       mobileMenu.classList.remove("active");
       menuToggle.classList.remove("active");
+      document.body.classList.remove("menu-open");
+      document.documentElement.classList.remove("menu-open");
     }
   });
 
@@ -79,5 +90,16 @@ document.addEventListener("DOMContentLoaded", () => {
       slider.scrollBy({ left: 380, behavior: "smooth" });
     };
   }
+
+  /* ================= PREVENT SCROLL WHEN MENU OPEN ================= */
+  document.addEventListener(
+    "touchmove",
+    (e) => {
+      if (document.body.classList.contains("menu-open")) {
+        e.preventDefault();
+      }
+    },
+    { passive: false }
+  );
 
 });

@@ -28,6 +28,14 @@ html, body {
   overflow-x: hidden;
 }
 
+html.menu-open,
+body.menu-open {
+  overflow: hidden;
+  height: 100%;
+  touch-action: none;
+}
+
+
 /* === NAVBAR ======= */
 .top-nav {
   background: #ffffff;
