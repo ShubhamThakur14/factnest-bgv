@@ -420,14 +420,14 @@ html, body {
 
 .about-strong {
   background: #f0fdfa; /* light teal background */
-  padding: 0 60px;
+  padding: 10px 60px;
 }
 
 .about-heading {
   font-size: 48px;
   font-weight: 900;
   color: #1f4fa3; 
-  margin-bottom: 26px;
+  margin-bottom: 0px;
 }
 
 .about-statement {
@@ -436,7 +436,7 @@ html, body {
   font-weight: 500;
   color: #334155; /* readable dark grey */
   line-height: 1.6;
-  margin-bottom: 0px;
+  margin-bottom: 30px;
 }
 
 .about-highlights {
@@ -456,6 +456,7 @@ html, body {
   font-size: 15px;
   color: #475569;
   line-height: 1.6;
+  margin-bottom: 30px;
 }
 
 
@@ -463,7 +464,7 @@ html, body {
 
 .compliance-section {
   background: #ffffff;
-  padding: 60px 60px;
+  padding: 20px 60px;
 }
 
 .compliance-wrapper {
@@ -515,139 +516,106 @@ html, body {
 }
 
 /* ==== footer====   */
-.footer {
-    background: linear-gradient(180deg, #1e3a5f 0%, #162e4a 100%);
-  color: #e5e7eb;
-  padding: 90px 0 30px;
+.clean-footer {
+  background: #f0fdfa;
+  border-radius: 28px;
+  margin: 40px 24px 40px;
+  padding: 60px 40px 30px;
+  font-family: "Segoe UI", sans-serif;
 }
 
-.footer-container {
+.clean-footer-container {
   max-width: 1200px;
   margin: auto;
-  padding: 0 40px;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.4fr;
-  gap: 60px;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
 }
 
 /* BRAND */
 .footer-logo {
   display: flex;
   align-items: center;
-  font-size: 24px;
+  font-size: 23px;
   font-weight: 800;
-  color: #ffffff;
+  color: #0f172a;
 }
 
-.footer-logo .fact {
-  color: #2B5794;
+.footer-logo img {
+  height: 30px;
+  width: auto;
+  display: block;
+}
+
+.footer-logo span {
+  line-height: 1;
+}
+.footer-logo .fact{
+  color: #2B5794;  
 }
 
 .footer-logo .nest {
   color: #2dd4bf;
 }
-
-.footer-logo img {
-  height: 34px;
+.footer-brand p {
+  margin-top: 14px;
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: #475569;
+  max-width: 360px;
 }
 
-.footer-desc {
-  margin-top: 18px;
-  font-size: 15px;
-  color: #cbd5e1;
-  line-height: 1.7;
-  max-width: 380px;
+.footer-social {
+  margin-top: 14px;
+  display: flex;
+  gap: 14px;
 }
 
-/* HEADINGS */
-.footer-col h4 {
-  font-size: 17px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 22px;
-  color: #a5b4c8;
+.footer-social a {
+  text-decoration: none;
+  color: #475569;
+  font-size: 16px;
 }
 
 /* LINKS */
-.footer-col ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-col ul li {
-  margin-bottom: 14px;
-}
-
-.footer-col ul li a {
-  text-decoration: none;
-  font-size: 15px;
-  color: #e5e7eb;
-  transition: color 0.2s ease;
-}
-
-.footer-col ul li a:hover {
-  color: #2dd4bf;
-}
-
-/* CTA PANEL */
-.footer-cta {
-  background: rgba(255, 255, 255, 0.06);
-  padding: 28px;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.footer-cta h3 {
-  font-size: 24px;
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 18px;
-}
-
-.footer-btn {
-  display: inline-block;
-  background: #2dd4bf;
-  color: #003b3d;
-  padding: 14px 26px;
-  border-radius: 10px;
+.footer-links h4 {
+  font-size: 18px;
   font-weight: 700;
-  text-decoration: none;
-  transition: all 0.25s ease;
-}
-
-.footer-btn:hover {
-  background: #22c1ae;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(45,212,191,0.35);
-}
-
-.footer-contact {
-  margin-top: 20px;
-  font-size: 14.5px;
-  color: #cbd5e1;
-}
-
-/* BOTTOM BAR */
-.footer-bottom {
-  max-width: 1200px;
-  margin: 60px auto 0;
-  padding: 22px 40px 0;
-  border-top: 1px solid rgba(255,255,255,0.12);
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
-  color: #a5b4c8;
+  margin-bottom: 14px;
+  color: #2B5794;
 }
 
 .footer-links a {
-  margin-left: 22px;
+  display: block;
   text-decoration: none;
-  color: #a5b4c8;
+  font-size: 16px;
+  color: #475569;
+  margin-bottom: 10px;
 }
 
 .footer-links a:hover {
-  color: #ffffff;
+  color: #2dd4bf;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.bottom-links a {
+  margin-left: 18px;
+  text-decoration: none;
+  color: #64748b;
+}
+
+.bottom-links a:hover {
+  color: #0f172a;
 }
 
 

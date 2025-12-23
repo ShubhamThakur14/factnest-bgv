@@ -763,119 +763,26 @@ body.menu-open {
 
 /* === footer === */
 
-/* ================= TABLET (721px – 1024px) ================= */
-@media (max-width: 1024px) {
 
-  .footer {
-    padding: 60px 0 24px;
-  }
-
-  .footer-container {
-    padding: 0 32px;
-    gap: 40px;
-    grid-template-columns: 2fr 1.2fr 1.2fr 1.4fr;
-  }
-
-  .footer-desc {
-    font-size: 14px;
-    max-width: 320px;
-    line-height: 1.6;
-  }
-
-  .footer-col h4 {
-    font-size: 16px;
-    margin-bottom: 16px;
-    letter-spacing: 0.06em;
-  }
-
-  .footer-col ul li {
-    margin-bottom: 10px;
-  }
-
-  .footer-col ul li a {
-    font-size: 14px;
-  }
-
-  .footer-cta {
-    padding: 22px;
-    border-radius: 14px;
-  }
-
-  .footer-cta h3 {
-    font-size: 12px;
-    margin-bottom: 14px;
-  }
-
-  .footer-btn {
-    padding: 8px 12px;
-        font-size: 12px;
-  }
-
-  .footer-contact {
-    margin-top: 14px;
-    font-size: 13px;
-  }
-
-  .footer-bottom {
-    padding: 18px 32px 0;
-    font-size: 13px;
-  }
-}
-
-/* ================= SMALL TABLET (600px – 720px) ================= */
-@media (max-width: 720px) {
-
-  .footer-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-  }
-
-  /* CTA goes full width */
-  .footer-cta {
-    grid-column: 1 / -1;
-    max-width: 420px;
-    margin: 16px auto 0;
-    padding: 18px;
-  }
-
-  .footer-cta h3 {
-    font-size: 18px;
-  }
-
-  .footer-btn {
-    padding: 11px;
-    font-size: 14px;
-  }
-
-  .footer-desc {
-    max-width: 420px;
-    margin-top: 20px;
-    font-size: 14px;
-  }
-
-  .footer-bottom {
-    margin-top: 36px;
-    text-align: center;
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-
-/* ================= MOBILE (≤768px) ================= */
+/* For mobile  */
 @media (max-width: 768px) {
 
   .footer {
-    padding: 48px 0 20px;
+    padding: 40px 0 20px;
+  }
+
+  .footer-card {
+    padding: 32px 20px 20px;
+    border-radius: 22px;
   }
 
   .footer-container {
     grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 0 16px;
+    gap: 26px;
     text-align: center;
   }
 
-  /* Show only brand + CTA */
+  /* Hide extra columns */
   .footer-col:nth-child(2),
   .footer-col:nth-child(3) {
     display: none;
@@ -883,52 +790,69 @@ body.menu-open {
 
   .footer-desc {
     font-size: 13px;
-    line-height: 1.5;
-    max-width: 100%;
+    margin: auto;
   }
 
   .footer-cta {
-    padding: 16px;
-    border-radius: 12px;
+    padding: 20px;
   }
 
   .footer-cta h3 {
     font-size: 16px;
-    margin-bottom: 10px;
   }
 
   .footer-btn {
-    width: 100%;
-    padding: 10px;
     font-size: 14px;
-    margin-bottom: 8px;
+    padding: 10px;
   }
 
-  /* Contact single line */
   .footer-contact {
-    margin-top: 4px;
-    font-size: 11px;
-    display: flex;
-    justify-content: center;
+    font-size: 12px;
     gap: 8px;
-    white-space: nowrap;
   }
 
   .footer-bottom {
-    margin-top: 24px;
-    padding-top: 14px;
-    font-size: 12px;
-    text-align: center;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
+    text-align: center;
+    font-size: 12px;
   }
 
   .footer-links a {
-    font-size: 12px;
-    margin: 0 6px;
+    margin: 0 8px;
   }
 }
 
+@media (max-width: 1024px) {
+
+  .footer {
+    padding: 56px 0 24px;
+  }
+
+  .footer-card {
+    padding: 44px 40px 24px;
+  }
+
+  .footer-container {
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+  }
+
+  /* CTA full width niche */
+  .footer-cta {
+    grid-column: 1 / -1;
+    max-width: 420px;
+    margin: 20px auto 0;
+  }
+
+  .footer-cta h3 {
+    font-size: 18px;
+  }
+
+  .footer-desc {
+    font-size: 14px;
+  }
+}
 
 
 
