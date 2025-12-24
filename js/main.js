@@ -137,6 +137,19 @@ if (form) {
   });
 }
 
+/* ================= CLOSE MENU ON LINK CLICK (NO SCROLL JUMP) ================= */
+document.querySelectorAll(".mobile-menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    mobileMenu.classList.remove("active");
+    menuToggle.classList.remove("active");
+
+    // scroll lock hatao
+    document.body.classList.remove("menu-open");
+    document.documentElement.classList.remove("menu-open");
+  });
+});
+
+
 
 });
 
