@@ -434,7 +434,7 @@ body.menu-open {
 .contact-subtext {
   text-align: center;
   max-width: 40.6rem; /* 650px */
-  margin: 0 auto 3.75rem;
+  margin: 0 auto 0rem;
   color: #555;
   font-size: 1rem;
 }
@@ -446,7 +446,7 @@ body.menu-open {
   grid-template-columns: 1fr 1fr;
   gap: 3.125rem; /* 50px */
   background: #fff;
-  padding: 3.125rem;
+  padding: 1.125rem;
   border-radius: 1.25rem;
   box-shadow: 0 1.25rem 3.125rem rgba(0,0,0,0.06);
 }
@@ -478,6 +478,10 @@ body.menu-open {
 }
 
 /* ================= CONTACT FORM ================= */
+
+.contact-section {
+  display: none;
+}
 
 .contact-form {
   display: flex;
@@ -542,6 +546,40 @@ body.menu-open {
     transform: translateY(0);
   }
 }
+
+/* Contact section hidden by default */
+.contact-section {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6); 
+  z-index: 999;
+  overflow-y: auto;
+  padding: 2rem 1rem;
+}
+
+/* Inner container (actual white box) */
+.contact-section .container {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  max-width: 53rem;
+  margin: auto;
+  padding: 2rem;
+  animation: contactFade 0.4s ease;
+}
+
+/* Animation */
+@keyframes contactFade {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /* ================= THANK YOU FULL WIDTH ================= */
 

@@ -139,3 +139,49 @@ if (form) {
 
 
 });
+
+
+// ========== Contact form hidden ===============
+const contactBtn = document.getElementById("contactBtn");
+const contactSection = document.getElementById("contact");
+
+if (contactBtn && contactSection) {
+  contactBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    // Show contact section
+    contactSection.style.display = "block";
+
+    // Smooth scroll
+    contactSection.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  });
+}
+
+// White-space click contact form close 
+
+const contactContainer = contactSection
+  ? contactSection.querySelector(".container")
+  : null;
+
+/* OPEN CONTACT */
+if (contactBtn && contactSection) {
+  contactBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    contactSection.style.display = "block";
+    document.body.style.overflow = "hidden"; // prevent background scroll
+  });
+}
+
+/* OUTSIDE CLICK TO CLOSE */
+if (contactSection && contactContainer) {
+  contactSection.addEventListener("click", function (e) {
+    if (!contactContainer.contains(e.target)) {
+      contactSection.style.display = "none";
+      document.body.style.overflow = ""; // restore scroll
+    }
+  });
+}
+
