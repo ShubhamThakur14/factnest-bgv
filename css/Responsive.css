@@ -1089,6 +1089,19 @@ body.menu-open {
   }
 }
 
+/* ===== Contact us form ========= */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    padding: 15px 20px;
+  }
+
+  .contact-heading {
+    font-size: 28px;
+  }
+}
+
+
 
 
 

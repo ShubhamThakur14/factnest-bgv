@@ -27,13 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const isOpen = mobileMenu.classList.toggle("active");
       menuToggle.classList.toggle("active");
 
-      if (isOpen) {
-        document.body.classList.add("menu-open");
-        document.documentElement.classList.add("menu-open");
-      } else {
-        document.body.classList.remove("menu-open");
-        document.documentElement.classList.remove("menu-open");
-      }
+      document.body.classList.toggle("menu-open", isOpen);
+      document.documentElement.classList.toggle("menu-open", isOpen);
     });
   }
 
@@ -52,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /* ================= DESKTOP SERVICES DROPDOWN (CLICK ONLY) ================= */
+  /* ================= DESKTOP SERVICES DROPDOWN ================= */
   const desktopDropdown = document.querySelector(".desktop-dropdown");
 
   if (desktopDropdown) {
@@ -102,4 +97,41 @@ document.addEventListener("DOMContentLoaded", () => {
     { passive: false }
   );
 
+  /* ================= CONTACT FORM ================= */
+ const form = document.getElementById("contactForm");
+const successMsg = document.getElementById("formSuccess");
+
+if (form) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const data = {
+      name: form.querySelector('input[placeholder="Your Name"]').value,
+      email: form.querySelector('input[placeholder="Your Email"]').value,
+      company: form.querySelector('input[placeholder="Company Name"]').value,
+      message: form.querySelector('textarea').value
+    };
+
+    fetch("https://script.google.com/macros/s/AKfycbwPbPM2aaTBTH_e1nRHxuN2oWotpa9xzBhGgt9QUS_g87UpwEjPBBOba0pLntArdwx4/exec", {
+      method: "POST",
+      body: JSON.stringify(data)
+    })
+    .then(() => {
+      // ✅ Show success message
+      if (successMsg) {
+        successMsg.style.display = "block";
+
+        setTimeout(() => {
+          successMsg.style.display = "none";
+        }, 4000);
+      }
+
+      // ✅ Clear form
+      form.reset();
+    })
+    .catch(() => {
+      alert("Something went wrong. Please try again.");
+    });
+  });
+}
 });
