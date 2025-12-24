@@ -98,8 +98,9 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   /* ================= CONTACT FORM ================= */
- const form = document.getElementById("contactForm");
-const successMsg = document.getElementById("formSuccess");
+const form = document.getElementById("contactForm");
+const contactWrapper = document.querySelector(".contact-wrapper");
+const contactThankYou = document.getElementById("contactThankYou");
 
 if (form) {
   form.addEventListener("submit", function (e) {
@@ -112,21 +113,22 @@ if (form) {
       message: form.querySelector('textarea').value
     };
 
-    fetch("https://script.google.com/macros/s/AKfycbwPbPM2aaTBTH_e1nRHxuN2oWotpa9xzBhGgt9QUS_g87UpwEjPBBOba0pLntArdwx4/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbwfdN24j8kN9pSq8paBlk0zM_s82ALqfCMEFCuy298tO27w7dwQPfppwZwD33jnWDJ1Yw/exec", {
       method: "POST",
       body: JSON.stringify(data)
     })
     .then(() => {
-      // ✅ Show success message
-      if (successMsg) {
-        successMsg.style.display = "block";
-
-        setTimeout(() => {
-          successMsg.style.display = "none";
-        }, 4000);
+      // ❌ Hide left + right both
+      if (contactWrapper) {
+        contactWrapper.style.display = "none";
       }
 
-      // ✅ Clear form
+      // ✅ Show full-width thank you
+      if (contactThankYou) {
+        contactThankYou.style.display = "block";
+        contactThankYou.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+
       form.reset();
     })
     .catch(() => {
@@ -134,4 +136,6 @@ if (form) {
     });
   });
 }
+
+
 });
