@@ -214,4 +214,3 @@ if (contactSection && contactContainer) {
     }
   });
 }
-
