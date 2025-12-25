@@ -444,7 +444,7 @@ body.menu-open {
 .contact-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3.125rem; /* 50px */
+  gap: 1.125rem; 
   background: #fff;
   padding: 1.125rem;
   border-radius: 1.25rem;
@@ -476,6 +476,54 @@ body.menu-open {
   color: #333;
   font-size: 0.9rem;
 }
+
+/* Left content polish */
+.contact-info-desc {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+/* Contact details list */
+.contact-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-details li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  margin-bottom: .25rem;
+}
+
+.contact-details .icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 0.6rem;
+  background: #e6fffa;
+  color: #0f766e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.contact-details strong {
+  display: block;
+  font-size: 0.85rem;
+  color: #0f172a;
+  margin-bottom: 0.15rem;
+}
+
+.contact-details span {
+  font-size: 0.85rem;
+  color: #475569;
+}
+
 
 /* ================= CONTACT FORM ================= */
 
@@ -562,7 +610,7 @@ body.menu-open {
 .contact-section .container {
   background: #ffffff;
   border-radius: 1.5rem;
-  max-width: 53rem;
+  max-width: 42rem;
   margin: auto;
   padding: 2rem;
   animation: contactFade 0.4s ease;

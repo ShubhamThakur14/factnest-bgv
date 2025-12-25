@@ -155,29 +155,46 @@ document.querySelectorAll(".mobile-menu a").forEach(link => {
 
 
 // ========== Contact form hidden ===============
-const contactBtn = document.getElementById("contactBtn");
+const contactBtns = document.querySelectorAll("#contactBtn");
 const contactSection = document.getElementById("contact");
+const mobileMenu = document.getElementById("mobileMenu");
+const menuToggle = document.getElementById("menuToggle");
 
-if (contactBtn && contactSection) {
-  contactBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    // Show contact section
-    contactSection.style.display = "block";
-
-    // Smooth scroll
-    contactSection.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
-  });
-}
-
-// White-space click contact form close 
-
+// container sirf ek hi baar define hoga
 const contactContainer = contactSection
   ? contactSection.querySelector(".container")
   : null;
+
+/* OPEN CONTACT MODAL */
+contactBtns.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    // 1️⃣ Close mobile menu if open
+    if (mobileMenu && mobileMenu.classList.contains("active")) {
+      mobileMenu.classList.remove("active");
+      menuToggle?.classList.remove("active");
+      document.body.classList.remove("menu-open");
+      document.documentElement.classList.remove("menu-open");
+    }
+
+    // 2️⃣ Open contact modal
+    if (contactSection) {
+      contactSection.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }
+  });
+});
+
+/* OUTSIDE CLICK TO CLOSE */
+if (contactSection && contactContainer) {
+  contactSection.addEventListener("click", (e) => {
+    if (!contactContainer.contains(e.target)) {
+      contactSection.style.display = "none";
+      document.body.style.overflow = "";
+    }
+  });
+}
 
 /* OPEN CONTACT */
 if (contactBtn && contactSection) {

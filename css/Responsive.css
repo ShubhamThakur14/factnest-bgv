@@ -1105,7 +1105,7 @@ body.menu-open {
 
   .contact-wrapper {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: .5rem;
     padding: .5rem;
   }
 
@@ -1115,7 +1115,7 @@ body.menu-open {
 
   .contact-subtext {
     font-size: 0.95rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
   }
 
   .contact-info h3 {
@@ -1139,12 +1139,12 @@ body.menu-open {
 @media (max-width: 768px) {
 
   .contact-section {
-    padding: 1rem 0;
+    padding: 5rem 0;
   }
 
   .contact-wrapper {
     grid-template-columns: 1fr;
-    padding: 2rem 1.5rem;
+    padding: 1rem 1.5rem;
     border-radius: 1rem;
   }
 
@@ -1153,8 +1153,8 @@ body.menu-open {
   }
 
   .contact-subtext {
-    font-size: 0.9rem;
-    margin-bottom: 2.5rem;
+    font-size: 1rem;
+    margin-bottom: .5rem;
   }
 
   .contact-info h3 {
@@ -1199,6 +1199,57 @@ body.menu-open {
 
   .thankyou-card p {
     font-size: 0.9rem;
+  }
+}
+
+/* Contact form detailing */
+/* ===== CONTACT DETAILS BASE ===== */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Each item */
+.contact-details li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+/* ================= TABLET & MOBILE ================= */
+@media (max-width: 1024px) {
+
+  .contact-details {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  /* Email & Phone in same row */
+  .contact-details li:nth-child(1),
+  .contact-details li:nth-child(2) {
+    width: calc(50% - 0.5rem);
+  }
+
+  /* Location full width */
+  .contact-details li:nth-child(3) {
+    width: 100%;
+  }
+}
+
+/* ================= MOBILE SMALL ================= */
+@media (max-width: 768px) {
+   .contact-section .container{
+    max-width: 36rem;
+   }
+  /* Tighten spacing for small screens */
+  .contact-details {
+    gap: 0.75rem;
+  }
+
+  .contact-details li {
+    gap: 0.7rem;
   }
 }
 
