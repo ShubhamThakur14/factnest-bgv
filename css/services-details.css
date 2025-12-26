@@ -1,0 +1,173 @@
+/* ===== ROOT ===== */
+:root {
+  --primary: #2dd4bf;
+  --dark: #0f172a;
+  --text: #475569;
+  --light-bg: #f8fafc;
+  --border: #e5e7eb;
+}
+
+/* ===== BASE ===== */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  background: var(--light-bg);
+  color: var(--text);
+}
+
+h2,
+h3,
+h4 {
+  color: var(--dark);
+  margin-top: 0;
+}
+
+.container {
+  max-width: 72rem;
+  margin: auto;
+  padding: 3rem 1.5rem;
+}
+
+/* ===== LAYOUT ===== */
+.services-layout {
+  display: grid;
+  grid-template-columns: 18rem 1fr;
+  gap: 3rem;
+}
+
+/* ===== SIDEBAR ===== */
+.services-sidebar {
+  background: #ffffff;
+  border-radius: 1.2rem;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.05);
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+}
+
+.sidebar-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-link {
+  padding: 0.75rem 1rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  color: var(--dark);
+}
+
+.service-link:hover {
+  background: rgba(45, 212, 191, 0.1);
+}
+
+.service-link.active {
+  background: var(--primary);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* ===== CONTENT AREA ===== */
+.services-content {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  padding: 3rem;
+  box-shadow: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.06);
+}
+
+/* Hide all by default */
+.service-content {
+  display: none;
+  animation: fadeUp 0.35s ease;
+}
+
+.service-content.active {
+  display: block;
+}
+
+.service-content h2 {
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
+}
+
+.service-content p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+
+.service-content h4 {
+  font-size: 1.05rem;
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.service-content ul {
+  padding-left: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.service-content ul li {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(0.6rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================== TABLET ===================== */
+@media (max-width: 1024px) {
+  .services-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .services-sidebar {
+    position: relative;
+    top: 0;
+  }
+}
+
+/* ===================== MOBILE ===================== */
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .services-sidebar {
+    padding: 1.5rem;
+  }
+
+  .services-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .service-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .service-content p,
+  .service-content ul li {
+    font-size: 0.9rem;
+  }
+}
+
