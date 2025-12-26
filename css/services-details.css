@@ -43,7 +43,8 @@ h4 {
   padding: 2rem 1.5rem;
   box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.05);
   height: fit-content;
-  position: sticky;
+  position: relative;
+  width: 100%;
   top: 2rem;
 }
 
@@ -135,17 +136,6 @@ h4 {
   }
 }
 
-/* ===================== TABLET ===================== */
-@media (max-width: 1024px) {
-  .services-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .services-sidebar {
-    position: relative;
-    top: 0;
-  }
-}
 
 /* ===================== MOBILE ===================== */
 @media (max-width: 768px) {
@@ -171,3 +161,127 @@ h4 {
   }
 }
 
+/* ================= MOBILE SERVICES DROPDOWN ================= */
+.services-mobile-dropdown {
+  display: none;
+  position: relative;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .services-mobile-dropdown {
+    display: block;
+  }
+
+  .services-list {
+    display: none;
+  }
+}
+
+.dropdown-btn {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #2dd4bf;
+  background: #fff;
+  color: #0f172a;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dropdown-options {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.08);
+  z-index: 10;
+  overflow: hidden;
+  list-style: none;
+}
+
+.dropdown-options li {
+  padding: 0.8rem 0rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+
+
+.services-mobile-dropdown.active .dropdown-options {
+  display: block;
+}
+
+
+/* Mobile / Tablet */
+@media (max-width: 768px) {
+
+  .services-layout {
+    grid-template-columns: 1fr; /* sidebar + content stack */
+  }
+
+  /* Sidebar ko simple header jaisa rakho */
+  .services-sidebar {
+    padding: 1.25rem;
+    background: #fff;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Desktop wali list hide */
+  .services-list {
+    display: none;
+  }
+
+  /* Mobile dropdown show */
+  .services-mobile-select {
+    display: block;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .services-list {
+    display: none;
+    list-style: none;
+  padding-left: 0;
+  margin: 0;
+  }
+
+  .services-mobile-select {
+    display: block;
+  }
+
+}
+
+.services-mobile-select option {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.services-mobile-select:focus {
+  box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.25);
+}
+/* Remove bullets from services list (mobile + desktop) */
+
+/* Remove unwanted left marker / cursor-like line */
+.service-content p::before,
+.service-content p::after {
+  content: none !important;
+}
+
+.service-content p {
+  border-left: none !important;
+  padding-left: 0 !important;
+}
+.service-content h2::before {
+  content: none !important;
+}
