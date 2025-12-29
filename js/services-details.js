@@ -1,135 +1,110 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const serviceLinks = document.querySelectorAll(".service-link");
-  const serviceContents = document.querySelectorAll(".service-content");
 
-  serviceLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      const targetId = link.getAttribute("data-target");
+  /* ================= SELECTORS ================= */
 
-      // Remove active from all links
-      serviceLinks.forEach((item) => item.classList.remove("active"));
+  const serviceLinks = document.querySelectorAll(".service-link"); // left sidebar links
+  const serviceContents = document.querySelectorAll(".service-content"); // right content sections
 
-      // Hide all content
-      serviceContents.forEach((content) =>
-        content.classList.remove("active")
-      );
+  const mobileSelect = document.querySelector(".services-mobile-select"); 
+  // NOTE: agar tum native <select> use kar rahe ho
 
-      // Activate clicked link
-      link.classList.add("active");
+  const mobileMenuLinks = document.querySelectorAll(
+    ".mobile-dropdown .dropdown-menu a"
+  ); // header mobile menu services
 
-      // Show corresponding content
-      const targetContent = document.getElementById(targetId);
-      if (targetContent) {
-        targetContent.classList.add("active");
-      }
-      if (window.innerWidth < 768) {
-  targetContent.scrollIntoView({ behavior: "smooth" });
-}
+  const customDropdown = document.querySelector(".services-mobile-dropdown");
+  const customDropdownText = customDropdown?.querySelector(".selected-text");
+  // NOTE: ye custom dropdown (jo sidebar me hai)
 
-    });
-  });
-});
+  /* ================= CORE FUNCTION ================= */
 
-document.addEventListener("DOMContentLoaded", () => {
-  const serviceLinks = document.querySelectorAll(".service-link");
-  const serviceContents = document.querySelectorAll(".service-content");
+  function activateService(id, scroll = false, label = "") {
 
-  function activateService(id) {
-    serviceLinks.forEach((link) => {
-      link.classList.toggle("active", link.dataset.target === id);
-    });
+    // 1️⃣ Content switch (right side)
+    serviceContents.forEach(section =>
+      section.classList.toggle("active", section.id === id)
+    );
 
-    serviceContents.forEach((content) => {
-      content.classList.toggle("active", content.id === id);
-    });
-  }
+    // 2️⃣ Sidebar active highlight (desktop)
+    serviceLinks.forEach(link =>
+      link.classList.toggle("active", link.dataset.target === id)
+    );
 
-  // Sidebar click
-  serviceLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      activateService(link.dataset.target);
-      history.replaceState(null, "", `#${link.dataset.target}`);
-    });
-  });
-
-  // Page load with hash
-  const hash = window.location.hash.replace("#", "");
-  if (hash) {
-    activateService(hash);
-  }
-});
-
-/* ===== SERVICES CONTENT SWITCH (DESKTOP + MOBILE) ===== */
-document.addEventListener("DOMContentLoaded", () => {
-  const mobileSelect = document.querySelector(".services-mobile-select");
-  const serviceLinks = document.querySelectorAll(".service-link");
-  const serviceContents = document.querySelectorAll(".service-content");
-
-  function showService(targetId) {
-    // Hide all contents
-    serviceContents.forEach(content => {
-      content.classList.remove("active");
-    });
-
-    // Show selected content
-    const activeSection = document.getElementById(targetId);
-    if (activeSection) {
-      activeSection.classList.add("active");
+    // 3️⃣ Native select sync (agar use ho raha ho)
+    if (mobileSelect) {
+      mobileSelect.value = id;
     }
 
-    // Update desktop sidebar active state
-    serviceLinks.forEach(link => {
-      link.classList.toggle(
-        "active",
-        link.getAttribute("data-target") === targetId
-      );
-    });
+    // 4️⃣ 🔥 Custom dropdown text sync (MAIN FIX)
+    if (customDropdownText && label) {
+      customDropdownText.textContent = label;
+    }
+
+    // 5️⃣ Optional smooth scroll
+    if (scroll) {
+      document.getElementById(id)?.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
   }
 
-  /* Desktop sidebar click */
+  /* ================= DESKTOP SIDEBAR CLICK ================= */
+
   serviceLinks.forEach(link => {
     link.addEventListener("click", () => {
-      const target = link.getAttribute("data-target");
-      showService(target);
+      activateService(
+        link.dataset.target,
+        true,
+        link.textContent.trim()
+      );
     });
   });
 
-  /* Mobile dropdown change */
+  /* ================= MOBILE <SELECT> DROPDOWN ================= */
+
   if (mobileSelect) {
-    mobileSelect.addEventListener("change", function () {
-      showService(this.value);
+    mobileSelect.addEventListener("change", () => {
+      const selectedOption =
+        mobileSelect.options[mobileSelect.selectedIndex].text;
+
+      activateService(mobileSelect.value, true, selectedOption);
     });
   }
-});
 
-const dropdown = document.querySelector(".services-mobile-dropdown");
-const btn = dropdown?.querySelector(".dropdown-btn");
-const options = dropdown?.querySelectorAll("li");
-const contents = document.querySelectorAll(".service-content");
+  /* ================= MOBILE MENU (HEADER) SERVICES CLICK ================= */
 
-btn?.addEventListener("click", () => {
-  dropdown.classList.toggle("active");
-});
+  mobileMenuLinks.forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
 
-options?.forEach(option => {
-  option.addEventListener("click", () => {
-    const target = option.dataset.value;
+      const target = link.dataset.target;
+      const label = link.textContent.trim();
 
-    // update button text
-    btn.querySelector(".selected-text").textContent = option.textContent;
+      // 🔥 content + dropdown sync
+      activateService(target, true, label);
 
-    // content switch
-    contents.forEach(c => c.classList.remove("active"));
-    document.getElementById(target)?.classList.add("active");
-
-    dropdown.classList.remove("active");
+      // close mobile menu
+      mobileMenu?.classList.remove("active");
+      menuToggle?.classList.remove("active");
+      document.body.classList.remove("menu-open");
+      document.documentElement.classList.remove("menu-open");
+    });
   });
-});
 
-// outside click close
-document.addEventListener("click", e => {
-  if (!dropdown.contains(e.target)) {
-    dropdown.classList.remove("active");
+  /* ================= URL HASH SUPPORT ================= */
+
+  const hash = window.location.hash.replace("#", "");
+  if (hash) {
+    const matchedLink = [...serviceLinks].find(
+      link => link.dataset.target === hash
+    );
+
+    activateService(
+      hash,
+      false,
+      matchedLink ? matchedLink.textContent.trim() : ""
+    );
   }
-});
 
+});

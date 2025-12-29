@@ -30,17 +30,17 @@
       <div class="desktop-dropdown">
         <span>Services ▾</span>
         <div class="desktop-dropdown-menu">
-          <a href="#">Identity Verification</a>
-          <a href="#">Address Verification</a>
-          <a href="#">Employment Verification</a>
-          <a href="#">Education Verification</a>
-          <a href="#">Criminal Check</a>
-          <a href="#">Credit Check</a>
+          <a href="#" data-target="identity">Identity Verification</a>
+          <a href="#" data-target="address">Address Verification</a>
+          <a href="#" data-target="employment">Employment Verification</a>
+          <a href="#" data-target="education">Education Verification</a>
+          <a href="#" data-target="criminal">Criminal Check</a>
+          <a href="#" data-target="credit">Credit Check</a>
         </div>
       </div>
 
       <a href="#about">About us</a>
-      <a href="#" id="contactBtn">Contact Us</a>
+      <a href="#" class="contact-btn">Contact Us</a>
     </nav>
 
     <!-- DESKTOP ACTIONS -->
@@ -55,7 +55,7 @@
     </div>
   </div>
 
-  <!-- MOBILE MENU (SEPARATE, CLEAN) -->
+  <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="#">Home</a>
 
@@ -63,22 +63,22 @@
       <button class="dropdown-toggle">
         Services <span class="arrow">▾</span>
       </button>
+
       <div class="dropdown-menu">
-        <a href="#">Identity Verification</a>
-        <a href="#">Address Verification</a>
-        <a href="#">Employment Verification</a>
-        <a href="#">Education Verification</a>
-        <a href="#">Criminal Check</a>
-        <a href="#">Credit Check</a>
+        <a href="#" data-target="identity">Identity Verification</a>
+        <a href="#" data-target="address">Address Verification</a>
+        <a href="#" data-target="employment">Employment Verification</a>
+        <a href="#" data-target="education">Education Verification</a>
+        <a href="#" data-target="criminal">Criminal Check</a>
+        <a href="#" data-target="credit">Credit Check</a>
       </div>
     </div>
 
     <a href="#about">About us</a>
-    <a href="#" id="contactBtn">Contact Us</a>
+    <a href="#" class="contact-btn">Contact Us</a>
 
     <a href="#" class="mobile-cta outline">Sign in</a>
     <a href="#" class="mobile-cta primary">Book a demo</a>
-    
   </div>
 </header>
 
@@ -359,7 +359,9 @@
 
 
   <!-- JS (later content toggle) -->
-  <script src="js/services-details.js"></script>
+  <script src="js/main.js"></script>
+<script src="js/services-details.js"></script>
+
 
 </body>
 </html>

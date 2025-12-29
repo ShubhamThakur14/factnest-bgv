@@ -285,3 +285,81 @@ h4 {
 .service-content h2::before {
   content: none !important;
 }
+
+/* ================= HEADER FIX ================= */
+.top-nav {
+  position: relative;   /* ❗ fixed / sticky mat rakho mobile me */
+  z-index: 100;
+}
+
+/* ================= SERVICES SECTION ================= */
+.services-details {
+  position: relative;
+  z-index: 500; /* header se upar */
+}
+
+/* ================= MOBILE SERVICES DROPDOWN ================= */
+.services-mobile-select {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  /* Layout stack */
+  .services-layout {
+    grid-template-columns: 1fr;
+  }
+
+  /* Sidebar simple card */
+  .services-sidebar {
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Desktop list hide */
+  .services-list {
+    display: none;
+  }
+
+  /* Mobile dropdown show */
+  .services-mobile-select {
+    display: block;
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid #2dd4bf;
+    background: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #0f172a;
+
+    position: relative;
+    z-index: 1000;        /* 🔥 MOST IMPORTANT */
+    pointer-events: auto;/* 🔥 click allow */
+  }
+
+  .services-mobile-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.25);
+  }
+}
+
+/* ================= BODY SCROLL SAFETY ================= */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* ================= CONTENT CLEANUP ================= */
+.service-content p::before,
+.service-content p::after {
+  content: none !important;
+}
+
+.service-content p {
+  border-left: none !important;
+  padding-left: 0 !important;
+}
+
+.service-content h2::before {
+  content: none !important;
+}
