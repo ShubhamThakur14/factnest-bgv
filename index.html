@@ -298,13 +298,26 @@ We help companies verify employees with complete accuracy and end-to-end confide
   </div>
 </section>
 
-<!-- ======= CONTACT SECTION ======= -->
+
+<!-- ======= CONTACT SECTION (MODAL) ======= -->
 <section class="contact-section" id="contact">
-  <div class="container">
+  <!-- overlay -->
+  <div class="contact-overlay"></div>
+
+  <div class="container contact-container">
+
+    <!-- CLOSE BUTTON -->
+    <button
+      type="button"
+      class="contact-close"
+      id="contactClose"
+      aria-label="Close contact form"
+    >✕</button>
 
     <h2 class="contact-heading fade-up">Contact Us</h2>
     <p class="contact-subtext fade-up">
-      Get in touch with FactNest for secure, compliant, and reliable background verification solutions.
+      Get in touch with FactNest for secure, compliant, and reliable background
+      verification solutions.
     </p>
 
     <!-- LEFT + RIGHT -->
@@ -312,38 +325,39 @@ We help companies verify employees with complete accuracy and end-to-end confide
 
       <!-- Contact Info -->
       <div class="contact-info fade-up">
-  <h3>Connect with FactNest</h3>
+        <h3>Connect with FactNest</h3>
 
-  <p class="contact-info-desc">
-    Connect with FactNest experts and build a safer, smarter hiring process.
-  </p>
+        <p class="contact-info-desc">
+          Connect with FactNest experts and build a safer, smarter hiring
+          process.
+        </p>
 
-  <ul class="contact-details">
-    <li>
-      <span class="icon">✉</span>
-      <div>
-        <strong>Email</strong>
-        <span>info@factnestbgv.com</span>
+        <ul class="contact-details">
+          <li>
+            <span class="icon">✉</span>
+            <div>
+              <strong>Email</strong>
+              <span>info@factnestbgv.com</span>
+            </div>
+          </li>
+
+          <li>
+            <span class="icon">📞</span>
+            <div>
+              <strong>Phone</strong>
+              <span>+91 8076835522</span>
+            </div>
+          </li>
+
+          <li>
+            <span class="icon">📍</span>
+            <div>
+              <strong>Location</strong>
+              <span>New Delhi, India</span>
+            </div>
+          </li>
+        </ul>
       </div>
-    </li>
-
-    <li>
-      <span class="icon">📞</span>
-      <div>
-        <strong>Phone</strong>
-        <span>+91 8076835522</span>
-      </div>
-    </li>
-
-    <li>
-      <span class="icon">📍</span>
-      <div>
-        <strong>Location</strong>
-        <span>New Delhi, India</span>
-      </div>
-    </li>
-  </ul>
-</div>
 
       <!-- Contact Form -->
       <div class="contact-form-wrapper" id="contactWrapper">
@@ -358,8 +372,8 @@ We help companies verify employees with complete accuracy and end-to-end confide
 
     </div>
 
-    <!-- ✅ FULL WIDTH THANK YOU (OUTSIDE WRAPPER) -->
-    <div class="contact-thankyou" id="contactThankYou">
+    <!-- THANK YOU STATE -->
+    <div class="contact-thankyou" id="contactThankYou" hidden>
       <div class="thankyou-card">
         <div class="thankyou-icon">✓</div>
         <h2>Thank you for contacting FactNest</h2>

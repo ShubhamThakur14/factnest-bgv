@@ -197,13 +197,13 @@ if (contactSection && contactContainer) {
 }
 
 /* OPEN CONTACT */
-if (contactBtn && contactSection) {
-  contactBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    contactSection.style.display = "block";
-    document.body.style.overflow = "hidden"; // prevent background scroll
-  });
-}
+// if (contactBtn && contactSection) {
+//   contactBtn.addEventListener("click", function (e) {
+//     e.preventDefault();
+//     contactSection.style.display = "block";
+//     document.body.style.overflow = "hidden"; // prevent background scroll
+//   });
+// }
 
 /* OUTSIDE CLICK TO CLOSE */
 if (contactSection && contactContainer) {
@@ -214,3 +214,87 @@ if (contactSection && contactContainer) {
     }
   });
 }
+
+// Closing btn in Contact form--------------
+document.addEventListener("DOMContentLoaded", () => {
+
+  const contactSection = document.getElementById("contact");
+  const contactOpenBtns = document.querySelectorAll("#contactBtn");
+  const contactCloseBtn = document.getElementById("contactClose");
+  const overlay = document.querySelector(".contact-overlay");
+
+  // ---------- OPEN CONTACT ----------
+  contactOpenBtns.forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+      contactSection.classList.add("active");
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  // ---------- CLOSE FUNCTION ----------
+  function closeContact() {
+    contactSection.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
+  // ❌ Close button
+  contactCloseBtn?.addEventListener("click", closeContact);
+
+  // ❌ Overlay click
+  overlay?.addEventListener("click", closeContact);
+
+  // ❌ ESC key
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") closeContact();
+  });
+
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const contactSection = document.getElementById("contact");
+  const contactCloseBtn = document.getElementById("contactClose");
+  const contactOverlay = document.querySelector(".contact-overlay");
+
+  // CLOSE BUTTON CLICK
+  if (contactCloseBtn) {
+    contactCloseBtn.addEventListener("click", () => {
+      contactSection.style.display = "none";
+    });
+  }
+
+  // OVERLAY CLICK (optional but recommended)
+  if (contactOverlay) {
+    contactOverlay.addEventListener("click", () => {
+      contactSection.style.display = "none";
+    });
+  }
+});
+
+
+contactBtns.forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    contactSection.style.display = "block";
+    document.body.style.overflow = "hidden";
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const contactSection = document.getElementById("contact");
+  const closeBtn = document.getElementById("contactClose");
+  const overlay = document.querySelector(".contact-overlay");
+
+  function closeContact() {
+    contactSection.style.display = "none";
+    document.body.style.overflow = "";
+  }
+
+  closeBtn?.addEventListener("click", closeContact);
+  overlay?.addEventListener("click", closeContact);
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeContact();
+  });
+});
+
