@@ -1089,17 +1089,7 @@ body.menu-open {
   }
 }
 
-/* ===== Contact us form ========= */
-@media (max-width: 768px) {
-  .contact-wrapper {
-    grid-template-columns: 1fr;
-    padding: 15px 20px;
-  }
 
-  .contact-heading {
-    font-size: 28px;
-  }
-}
 
 @media (min-width: 769px) and (max-width: 1024px) {
 
@@ -1149,31 +1139,38 @@ body.menu-open {
   }
 
   .contact-heading {
-    font-size: 1.75rem;
+    font-size: 1.55rem;
   }
 
   .contact-subtext {
-    font-size: 1rem;
+    font-size: .85rem;
     margin-bottom: .5rem;
   }
 
   .contact-info h3 {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 
   .contact-info li {
-    font-size: 0.85rem;
+    font-size: 0.65rem;
   }
 
   .contact-form input,
   .contact-form textarea {
-    font-size: 0.85rem;
-    padding: 0.85rem 0.9rem;
+    font-size: 0.65rem;
+    padding: 0.65rem 0.9rem;
   }
 
   .contact-form button {
     font-size: 0.9rem;
-    padding: 0.85rem;
+    padding: 0.65rem;
+  }
+
+  @media (max-width: 550px) {
+        .contact-section .container {
+        max-width: 25rem;
+    }
+
   }
 
   /* Thank You Section */
