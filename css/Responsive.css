@@ -1217,6 +1217,10 @@ body.menu-open {
   gap: 0.9rem;
 }
 
+.contact-details span{
+  font-size: 0.65rem;
+}
+
 /* ================= TABLET & MOBILE ================= */
 @media (max-width: 1024px) {
 

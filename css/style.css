@@ -872,4 +872,6 @@ p, input, textarea {
   user-select: text;
 }
 
-
+.fade-up a{
+  color: #244c86;
+}
