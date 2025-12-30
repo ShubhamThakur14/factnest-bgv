@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/Responsive.css">
   <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-   
+   ,<link rel="stylesheet" href="css/Request.css">
 </head>
 <body>
 
@@ -47,8 +47,10 @@
 
     <!-- DESKTOP ACTIONS -->
     <div class="nav-actions desktop-only">
-      <a href="#" class="nav-login">Sign in</a>
-      <a href="#" class="nav-cta">Book a demo</a>
+      <a href="#" class="nav-cta request-verification-btn" id="requestVerificationBtn">
+  Request Verification
+</a>
+
     </div>
 
     <!-- HAMBURGER -->
@@ -78,9 +80,7 @@
     <a href="#about">About us</a>
     <a href="#" id="contactBtn">Contact Us</a>
 
-    <a href="#" class="mobile-cta outline">Sign in</a>
-    <a href="#" class="mobile-cta primary">Book a demo</a>
-    
+        
   </div>
 </header>
 
@@ -102,7 +102,7 @@ We help companies verify employees with complete accuracy and end-to-end confide
 
       <div class="hero-buttons">
         <a href="#" class="btn-primary" id="contactBtn">Get In Touch</a>
-        <a href="#" class="nav-login">Sign in</a>
+        
       </div>
     </div>
 
@@ -387,6 +387,126 @@ We help companies verify employees with complete accuracy and end-to-end confide
 </section>
 
 
+<!-- Request Verification section  -->
+
+<section class="verification-modal" id="verificationModal">
+  <div class="verification-overlay"></div>
+
+  <div class="verification-box">
+
+    <!-- Close -->
+    <button class="verification-close" id="verificationClose">✕</button>
+
+    <h2>Request Background Verification</h2>
+    <p class="verification-subtext">
+      Share your requirements and our verification team will reach out to you.
+    </p>
+
+    <form id="verificationForm">
+
+      <!-- Company Details -->
+      <h4>Company Details</h4>
+      <input type="text" placeholder="Company Name *" required>
+      <input type="email" placeholder="Official Email *" required>
+      <input type="tel" placeholder="Phone Number *" required>
+      <input type="text" placeholder="Company Location">
+
+      <select required>
+        <option value="">Company Type</option>
+        <option>Startup</option>
+        <option>SME</option>
+        <option>Enterprise</option>
+        <option>Consultancy / Vendor</option>
+      </select>
+
+      <!-- Verification Types -->
+     <h4>Verification Required</h4>
+
+<div class="verification-group">
+
+  <label class="verification-row">
+    <span class="label-text">Identity Verification</span>
+    <input type="checkbox" name="verification[]" value="identity">
+  </label>
+
+  <label class="verification-row">
+    <span class="label-text">Address Verification</span>
+    <input type="checkbox" name="verification[]" value="address">
+  </label>
+
+  <label class="verification-row">
+    <span class="label-text">Employment Verification</span>
+    <input type="checkbox" name="verification[]" value="employment">
+  </label>
+
+  <label class="verification-row">
+    <span class="label-text">Education Verification</span>
+    <input type="checkbox" name="verification[]" value="education">
+  </label>
+
+  <label class="verification-row">
+    <span class="label-text">Criminal Record Check</span>
+    <input type="checkbox" name="verification[]" value="criminal">
+  </label>
+
+  <label class="verification-row">
+    <span class="label-text">Credit Check</span>
+    <input type="checkbox" name="verification[]" value="credit">
+  </label>
+
+</div>
+
+
+      <!-- Volume -->
+      <h4>Hiring Details</h4>
+      <select>
+        <option>Number of Candidates</option>
+        <option>1–10</option>
+        <option>10–50</option>
+        <option>50–200</option>
+        <option>200+</option>
+      </select>
+
+      <select>
+        <option>Expected Turnaround Time</option>
+        <option>Standard</option>
+        <option>Urgent</option>
+        <option>Not sure</option>
+      </select>
+
+      <textarea placeholder="Any specific requirement or compliance need?"></textarea>
+
+      <label class="consent-line">
+  <input type="checkbox" required>
+  <span>I confirm that candidate consent has been obtained.</span>
+</label>
+
+
+      <button type="submit" class="verification-submit">
+        Submit Verification Request
+      </button>
+
+    </form>
+
+    <!-- Request - Thanks msg -->
+
+     <div class="verification-success" id="verificationSuccess"  style="display:none;">
+      <h3>Thank you for your verification request</h3>
+      <p>
+        Our team has received your request and will contact you within
+        <strong>24 business hours</strong>.
+      </p>
+      <p class="trust-text">
+        FactNest ensures secure, compliant, and confidential background verification.
+      </p>
+    </div>
+
+
+  </div>
+</section>
+
+
+
 <!-- =========   Compliance-Section ========== -->
 <section class="compliance-section">
   <div class="container compliance-wrapper">
@@ -521,7 +641,7 @@ We help companies verify employees with complete accuracy and end-to-end confide
 
 
 
-
+<script src="js/Request.js"></script>
 <script src="js/main.js"></script>
 
 </body>

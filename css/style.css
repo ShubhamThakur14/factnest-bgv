@@ -1,6 +1,11 @@
 html {
   scroll-behavior: smooth;
 }
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 
 .fade-up {
   opacity: 0;
@@ -41,12 +46,16 @@ body.menu-open {
   background: #ffffff;
   border-bottom: 0.0625rem solid #e5e7eb; /* 1px */
   height: 4.1875rem; /* 67px */
+  margin: 0;
+  padding: 0;
+
+
 }
 
 .nav-container {
   max-width: 75rem; /* 1200px */
   margin: auto;
-  padding: 0.9375rem 1.25rem; /* 15px 20px */
+  padding: 0.8375rem 1.25rem; /* 15px 20px */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -115,25 +124,6 @@ body.menu-open {
   margin-left: auto;
 }
 
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 1rem; /* 16px */
-}
-
-.nav-login {
-  color: #2B5794;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 0.5rem 0.625rem; /* 8px 10px */
-  border-radius: 0.375rem; /* 6px */
-  transition: all 0.25s ease;
-}
-
-.nav-login:hover {
-  color: #2B5794;
-  background-color: #E6FFFA;
-}
 
 .nav-cta {
   background-color: #2DD4BF;
@@ -960,3 +950,25 @@ p, input, textarea {
 .contact-close:hover {
   background: #22c1ae;
 }
+
+
+
+/* ===== REQUEST VERIFICATION CTA ===== */
+.request-verification-btn {
+  background-color: #2dd4bf;
+  color: #003b3d;
+  padding: 0.625rem 1.25rem; /* 10px 20px */
+  border-radius: 0.6rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  margin-left: 12px;
+}
+
+.request-verification-btn:hover {
+  background-color: #22c1ae;
+  box-shadow: 0 8px 20px rgba(45, 212, 191, 0.45);
+  transform: translateY(-1px);
+}
+
