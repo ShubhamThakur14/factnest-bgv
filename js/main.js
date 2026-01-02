@@ -298,3 +298,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
+// ------- contact -form through Services page
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.location.hash === "#contact") {
+    const contactBtn = document.getElementById("contactBtn");
+    contactBtn?.click();
+  }
+});
+
