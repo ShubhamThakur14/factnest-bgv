@@ -2,45 +2,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ================= SELECTORS ================= */
 
-  const serviceLinks = document.querySelectorAll(".service-link"); // left sidebar links
-  const serviceContents = document.querySelectorAll(".service-content"); // right content sections
+  const serviceLinks = document.querySelectorAll(".service-link");
+  const serviceContents = document.querySelectorAll(".service-content");
 
-  const mobileSelect = document.querySelector(".services-mobile-select"); 
-  // NOTE: agar tum native <select> use kar rahe ho
+  // native <select> (agar future me use ho)
+  const mobileSelect = document.querySelector(".services-mobile-select");
 
+  // header mobile menu services
   const mobileMenuLinks = document.querySelectorAll(
     ".mobile-dropdown .dropdown-menu a"
-  ); // header mobile menu services
+  );
 
+  const mobileMenu = document.getElementById("mobileMenu");
+  const menuToggle = document.getElementById("menuToggle");
+
+  // custom dropdown (sidebar mobile)
   const customDropdown = document.querySelector(".services-mobile-dropdown");
-  const customDropdownText = customDropdown?.querySelector(".selected-text");
-  // NOTE: ye custom dropdown (jo sidebar me hai)
+  const dropdownBtn = customDropdown?.querySelector(".dropdown-btn");
+  const dropdownText = customDropdown?.querySelector(".selected-text");
+  const dropdownOptions = customDropdown?.querySelectorAll(".dropdown-options li");
 
   /* ================= CORE FUNCTION ================= */
 
   function activateService(id, scroll = false, label = "") {
 
-    // 1️⃣ Content switch (right side)
+    // 1️⃣ Right side content
     serviceContents.forEach(section =>
       section.classList.toggle("active", section.id === id)
     );
 
-    // 2️⃣ Sidebar active highlight (desktop)
+    // 2️⃣ Desktop sidebar active
     serviceLinks.forEach(link =>
       link.classList.toggle("active", link.dataset.target === id)
     );
 
-    // 3️⃣ Native select sync (agar use ho raha ho)
+    // 3️⃣ Native select sync (safe)
     if (mobileSelect) {
       mobileSelect.value = id;
     }
 
-    // 4️⃣ 🔥 Custom dropdown text sync (MAIN FIX)
-    if (customDropdownText && label) {
-      customDropdownText.textContent = label;
+    // 4️⃣ Custom dropdown text sync
+    if (dropdownText && label) {
+      dropdownText.textContent = label;
     }
 
-    // 5️⃣ Optional smooth scroll
+    // 5️⃣ Optional scroll
     if (scroll) {
       document.getElementById(id)?.scrollIntoView({
         behavior: "smooth",
@@ -49,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  /* ================= DESKTOP SIDEBAR CLICK ================= */
+  /* ================= DESKTOP SIDEBAR ================= */
 
   serviceLinks.forEach(link => {
     link.addEventListener("click", () => {
@@ -61,18 +67,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* ================= MOBILE <SELECT> DROPDOWN ================= */
+  /* ================= CUSTOM MOBILE DROPDOWN ================= */
 
-  if (mobileSelect) {
-    mobileSelect.addEventListener("change", () => {
-      const selectedOption =
-        mobileSelect.options[mobileSelect.selectedIndex].text;
+  dropdownBtn?.addEventListener("click", () => {
+    customDropdown.classList.toggle("active");
+  });
 
-      activateService(mobileSelect.value, true, selectedOption);
+  dropdownOptions?.forEach(option => {
+    option.addEventListener("click", () => {
+      const target = option.dataset.value;
+      const label = option.textContent.trim();
+
+      activateService(target, true, label);
+
+      customDropdown.classList.remove("active");
     });
-  }
+  });
 
-  /* ================= MOBILE MENU (HEADER) SERVICES CLICK ================= */
+  // outside click close
+  document.addEventListener("click", e => {
+    if (customDropdown && !customDropdown.contains(e.target)) {
+      customDropdown.classList.remove("active");
+    }
+  });
+
+  /* ================= HEADER MOBILE MENU ================= */
 
   mobileMenuLinks.forEach(link => {
     link.addEventListener("click", e => {
@@ -81,10 +100,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const target = link.dataset.target;
       const label = link.textContent.trim();
 
-      // 🔥 content + dropdown sync
       activateService(target, true, label);
 
-      // close mobile menu
       mobileMenu?.classList.remove("active");
       menuToggle?.classList.remove("active");
       document.body.classList.remove("menu-open");
