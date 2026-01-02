@@ -92,22 +92,39 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ================= HEADER MOBILE MENU ================= */
+/* ================= HEADER MOBILE MENU ================= */
 
-  mobileMenuLinks.forEach(link => {
-    link.addEventListener("click", e => {
-      e.preventDefault();
+mobileMenuLinks.forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
 
-      const target = link.dataset.target;
-      const label = link.textContent.trim();
+    const target = link.dataset.target;
+    if (!target) return;
 
-      activateService(target, true, label);
+    const label = link.textContent.trim();
 
-      mobileMenu?.classList.remove("active");
-      menuToggle?.classList.remove("active");
-      document.body.classList.remove("menu-open");
-      document.documentElement.classList.remove("menu-open");
-    });
+    // 1️⃣ Pehle mobile menu band karo
+    mobileMenu?.classList.remove("active");
+    menuToggle?.classList.remove("active");
+    document.body.classList.remove("menu-open");
+    document.documentElement.classList.remove("menu-open");
+
+    // 2️⃣ Thoda wait, phir scroll + content activate
+    setTimeout(() => {
+
+      // scroll to services section
+      document.getElementById("services")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+      // activate service content (NO scroll inside)
+      activateService(target, false, label);
+
+    }, 300); // menu animation wait
   });
+});
+
 
   /* ================= URL HASH SUPPORT ================= */
 
@@ -125,3 +142,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
