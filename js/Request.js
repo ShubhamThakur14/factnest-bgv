@@ -47,3 +47,29 @@ document.addEventListener("DOMContentLoaded", () => {
     successBox.scrollIntoView({ behavior: "smooth", block: "center" });
   });
 });
+
+
+// Request-btn through menu 
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const verificationModal = document.getElementById("verificationModal");
+  const verificationClose = document.getElementById("verificationClose");
+  const verificationOverlay = document.querySelector(".verification-overlay");
+
+  // 🔥 AUTO OPEN via URL
+  if (window.location.hash === "#request-verification") {
+    verificationModal?.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  // CLOSE modal
+  function closeVerification() {
+    verificationModal?.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
+  verificationClose?.addEventListener("click", closeVerification);
+  verificationOverlay?.addEventListener("click", closeVerification);
+
+});

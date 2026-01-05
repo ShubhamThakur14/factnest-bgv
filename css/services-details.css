@@ -286,17 +286,8 @@ h4 {
   content: none !important;
 }
 
-/* ================= HEADER FIX ================= */
-.top-nav {
-  position: relative;   /* ❗ fixed / sticky mat rakho mobile me */
-  z-index: 100;
-}
 
-/* ================= SERVICES SECTION ================= */
-.services-details {
-  position: relative;
-  z-index: 500; /* header se upar */
-}
+
 
 /* ================= MOBILE SERVICES DROPDOWN ================= */
 .services-mobile-select {
@@ -362,4 +353,19 @@ body.menu-open {
 
 .service-content h2::before {
   content: none !important;
+}
+
+/* ================= FIX: HEADER OVERLAP ================= */
+
+
+@media (max-width: 768px) {
+  .services-details {
+    padding-top: 50px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px){
+  .services-details{
+    padding-top: 50px;
+  }
 }

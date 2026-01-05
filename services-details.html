@@ -6,10 +6,11 @@
   <title>Our Services | FactNest</title>
 
   <!-- CSS -->
-   
-   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/services-details.css" />
-  <link rel="stylesheet" href="css/Responsive.css">z
+<link rel="stylesheet" href="css/Request.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/services-details.css">
+
   
 </head>
 <body>
@@ -46,10 +47,13 @@
     </nav>
 
    <!-- DESKTOP ACTIONS -->
-    <div class="nav-actions desktop-only">
-      <a href="#" class="nav-login">Sign in</a>
-      <a href="#" class="nav-cta">Book a demo</a>
-    </div>
+   <div class="nav-actions desktop-only">
+  <a href="#"
+     class="nav-cta request-verification-btn"
+     id="requestVerificationBtn">
+    Request Verification
+  </a>
+</div>
 
     <!-- HAMBURGER -->
     <div class="menu-toggle" id="menuToggle">
@@ -78,6 +82,10 @@
 
     <a href="index.html#about">About us</a>
     <a href="index.html#contact" >Contact Us</a>
+    <a href="index.html#request-verification">
+  Request Verification
+</a>
+
 
     
   </div>
@@ -287,6 +295,214 @@
 
   </section>
 
+  <!-- ======= CONTACT SECTION (MODAL) ======= -->
+<section class="contact-section" id="contact">
+  <!-- overlay -->
+  <div class="contact-overlay"></div>
+
+  <div class="container contact-container">
+
+    <!-- CLOSE BUTTON -->
+    <button
+      type="button"
+      class="contact-close"
+      id="contactClose"
+      aria-label="Close contact form"
+    >✕</button>
+
+    <h2 class="contact-heading fade-up">Contact Us</h2>
+    <p class="contact-subtext fade-up">
+      Get in touch with FactNest for secure, compliant, and reliable background
+      verification solutions.
+    </p>
+
+    <!-- LEFT + RIGHT -->
+    <div class="contact-wrapper">
+
+      <!-- Contact Info -->
+      <div class="contact-info fade-up">
+        <h3>Connect with FactNest</h3>
+
+        <p class="contact-info-desc">
+          Connect with FactNest experts and build a safer, smarter hiring
+          process.
+        </p>
+
+        <ul class="contact-details">
+          <li>
+            <span class="icon">✉</span>
+            <div>
+              <strong>Email</strong>
+              <span>info@factnestbgv.com</span>
+            </div>
+          </li>
+
+          <li>
+            <span class="icon">📞</span>
+            <div>
+              <strong>Phone</strong>
+              <span>+91 8076835522</span>
+            </div>
+          </li>
+
+          <li>
+            <span class="icon">📍</span>
+            <div>
+              <strong>Location</strong>
+              <span>New Delhi, India</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-wrapper" id="contactWrapper">
+        <form class="contact-form fade-up" id="contactForm">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <input type="text" placeholder="Company Name" />
+          <textarea placeholder="Your Message" rows="5" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- THANK YOU STATE -->
+    <div class="contact-thankyou" id="contactThankYou" hidden>
+      <div class="thankyou-card">
+        <div class="thankyou-icon">✓</div>
+        <h2>Thank you for contacting FactNest</h2>
+        <p>
+          We’ve received your message and our team will get back to you shortly.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Request Verification section  -->
+
+<section class="verification-modal" id="verificationModal">
+  <div class="verification-overlay"></div>
+
+  <div class="verification-box">
+
+    <!-- Close -->
+    <button class="verification-close" id="verificationClose">✕</button>
+
+    <h2>Request Background Verification</h2>
+    <p class="verification-subtext">
+      Share your requirements and our verification team will reach out to you.
+    </p>
+
+    <form id="verificationForm">
+
+      <!-- Company Details -->
+      <h4>Company Details</h4>
+      <input type="text" placeholder="Company Name *" required>
+      <input type="email" placeholder="Official Email *" required>
+      <input type="tel" placeholder="Phone Number *" required>
+      <input type="text" placeholder="Company Location">
+
+      <select required>
+        <option value="">Company Type</option>
+        <option>Startup</option>
+        <option>SME</option>
+        <option>Enterprise</option>
+        <option>Consultancy / Vendor</option>
+      </select>
+
+      <!-- Verification Types -->
+     <h4>Verification Required</h4>
+
+<div class="verification-group">
+
+  <label class="verification-row">
+    <span class="label-text">Identity Verification</span>
+    <input type="checkbox" name="verification[]" value="identity">
+  </label>
+
+  <label class="verification-row">
+    <span class="label-text">Address Verification</span>
+    <input type="checkbox" name="verification[]" value="address">
+  </label>
+
+  <label class="verification-row">
+    <span class="label-text">Employment Verification</span>
+    <input type="checkbox" name="verification[]" value="employment">
+  </label>
+
+  <label class="verification-row">
+    <span class="label-text">Education Verification</span>
+    <input type="checkbox" name="verification[]" value="education">
+  </label>
+
+  <label class="verification-row">
+    <span class="label-text">Criminal Record Check</span>
+    <input type="checkbox" name="verification[]" value="criminal">
+  </label>
+
+  <label class="verification-row">
+    <span class="label-text">Credit Check</span>
+    <input type="checkbox" name="verification[]" value="credit">
+  </label>
+
+</div>
+
+
+      <!-- Volume -->
+      <h4>Hiring Details</h4>
+      <select>
+        <option>Number of Candidates</option>
+        <option>1–10</option>
+        <option>10–50</option>
+        <option>50–200</option>
+        <option>200+</option>
+      </select>
+
+      <select>
+        <option>Expected Turnaround Time</option>
+        <option>Standard</option>
+        <option>Urgent</option>
+        <option>Not sure</option>
+      </select>
+
+      <textarea placeholder="Any specific requirement or compliance need?"></textarea>
+
+      <label class="consent-line">
+  <input type="checkbox" required>
+  <span>I confirm that candidate consent has been obtained.</span>
+</label>
+
+
+      <button type="submit" class="verification-submit">
+        Submit Verification Request
+      </button>
+
+    </form>
+
+    <!-- Request - Thanks msg -->
+
+     <div class="verification-success" id="verificationSuccess"  style="display:none;">
+      <h3>Thank you for your verification request</h3>
+      <p>
+        Our team has received your request and will contact you within
+        <strong>24 business hours</strong>.
+      </p>
+      <p class="trust-text">
+        FactNest ensures secure, compliant, and confidential background verification.
+      </p>
+    </div>
+
+
+  </div>
+</section>
+
+
+
   <!-- Footer -->
    <footer class="clean-footer">
   <div class="clean-footer-container">
@@ -360,6 +576,7 @@
 
 
   <!-- JS (later content toggle) -->
+   <script src="js/Request.js"></script>
   <script src="js/main.js"></script>
 <script src="js/services-details.js"></script>
 

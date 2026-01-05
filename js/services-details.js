@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /* ================= HEADER MOBILE MENU ================= */
+ 
 /* ================= HEADER MOBILE MENU ================= */
 
 mobileMenuLinks.forEach(link => {
@@ -142,4 +142,32 @@ mobileMenuLinks.forEach(link => {
   }
 
 });
+
+// ===== HEADER SERVICES DROPDOWN SUPPORT =====
+/* ================= HEADER SERVICES SUPPORT ================= */
+document
+  .querySelectorAll(".desktop-dropdown-menu a, .mobile-menu .dropdown-menu a")
+  .forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+
+      const target = link.dataset.target;
+      if (!target) return;
+
+      // activate same as sidebar
+      document.querySelectorAll(".service-content").forEach(section => {
+        section.classList.toggle("active", section.id === target);
+      });
+
+      document.querySelectorAll(".service-link").forEach(item => {
+        item.classList.toggle("active", item.dataset.target === target);
+      });
+
+      // scroll to content
+      document.getElementById("services")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+  });
 

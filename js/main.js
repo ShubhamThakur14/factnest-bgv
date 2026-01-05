@@ -196,14 +196,7 @@ if (contactSection && contactContainer) {
   });
 }
 
-/* OPEN CONTACT */
-// if (contactBtn && contactSection) {
-//   contactBtn.addEventListener("click", function (e) {
-//     e.preventDefault();
-//     contactSection.style.display = "block";
-//     document.body.style.overflow = "hidden"; // prevent background scroll
-//   });
-// }
+
 
 /* OUTSIDE CLICK TO CLOSE */
 if (contactSection && contactContainer) {
