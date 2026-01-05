@@ -153,70 +153,53 @@ document.querySelectorAll(".mobile-menu a").forEach(link => {
 
 });
 
-
-// ========== Contact form hidden ===============
-const contactBtns = document.querySelectorAll("#contactBtn");
-const contactSection = document.getElementById("contact");
-const mobileMenu = document.getElementById("mobileMenu");
-const menuToggle = document.getElementById("menuToggle");
-
-// container sirf ek hi baar define hoga
-const contactContainer = contactSection
-  ? contactSection.querySelector(".container")
-  : null;
-
-/* OPEN CONTACT MODAL */
-contactBtns.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    // 1️⃣ Close mobile menu if open
-    if (mobileMenu && mobileMenu.classList.contains("active")) {
-      mobileMenu.classList.remove("active");
-      menuToggle?.classList.remove("active");
-      document.body.classList.remove("menu-open");
-      document.documentElement.classList.remove("menu-open");
-    }
-
-    // 2️⃣ Open contact modal
-    if (contactSection) {
-      contactSection.style.display = "flex";
-      document.body.style.overflow = "hidden";
-    }
-  });
-});
-
-/* OUTSIDE CLICK TO CLOSE */
-if (contactSection && contactContainer) {
-  contactSection.addEventListener("click", (e) => {
-    if (!contactContainer.contains(e.target)) {
-      contactSection.style.display = "none";
-      document.body.style.overflow = "";
-    }
-  });
-}
-
-
-
-/* OUTSIDE CLICK TO CLOSE */
-if (contactSection && contactContainer) {
-  contactSection.addEventListener("click", function (e) {
-    if (!contactContainer.contains(e.target)) {
-      contactSection.style.display = "none";
-      document.body.style.overflow = ""; // restore scroll
-    }
-  });
-}
-
-// Closing btn in Contact form--------------
+/* ================= CONTACT MODAL (GLOBAL – ALL PAGES) ================= */
 document.addEventListener("DOMContentLoaded", () => {
 
+  const contactSection = document.getElementById("contact");
+  const contactBtns = document.querySelectorAll("#contactBtn");
+  const contactCloseBtn = document.getElementById("contactClose");
+  const contactOverlay = document.querySelector(".contact-overlay");
+
+  if (!contactSection) return;
+
+  /* OPEN CONTACT */
+  contactBtns.forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+
+      contactSection.classList.add("active");
+      document.body.style.overflow = "hidden";
+      document.documentElement.classList.add("menu-open");
+    });
+  });
+
+  /* CLOSE CONTACT */
+  function closeContact() {
+    contactSection.classList.remove("active");
+    document.body.style.overflow = "";
+    document.documentElement.classList.remove("menu-open");
+  }
+
+  contactCloseBtn?.addEventListener("click", closeContact);
+  contactOverlay?.addEventListener("click", closeContact);
+
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") closeContact();
+  });
+
+});
+
+// ================= CONTACT MODAL (FINAL & CLEAN) =================
+document.addEventListener("DOMContentLoaded", () => {
   const contactSection = document.getElementById("contact");
   const contactOpenBtns = document.querySelectorAll("#contactBtn");
   const contactCloseBtn = document.getElementById("contactClose");
   const overlay = document.querySelector(".contact-overlay");
 
-  // ---------- OPEN CONTACT ----------
+  if (!contactSection) return;
+
+  // OPEN CONTACT
   contactOpenBtns.forEach(btn => {
     btn.addEventListener("click", e => {
       e.preventDefault();
@@ -225,78 +208,103 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ---------- CLOSE FUNCTION ----------
+  // CLOSE FUNCTION
   function closeContact() {
     contactSection.classList.remove("active");
     document.body.style.overflow = "";
   }
 
-  // ❌ Close button
+  // Close button
   contactCloseBtn?.addEventListener("click", closeContact);
 
-  // ❌ Overlay click
+  // Overlay click
   overlay?.addEventListener("click", closeContact);
 
-  // ❌ ESC key
+  // ESC key
   document.addEventListener("keydown", e => {
     if (e.key === "Escape") closeContact();
   });
-
 });
 
+// ================= CONTACT MODAL (GLOBAL – SAFE & CLEAN) =================
 document.addEventListener("DOMContentLoaded", () => {
   const contactSection = document.getElementById("contact");
+  const contactOpenBtns = document.querySelectorAll(".contact-btn");
   const contactCloseBtn = document.getElementById("contactClose");
-  const contactOverlay = document.querySelector(".contact-overlay");
-
-  // CLOSE BUTTON CLICK
-  if (contactCloseBtn) {
-    contactCloseBtn.addEventListener("click", () => {
-      contactSection.style.display = "none";
-    });
-  }
-
-  // OVERLAY CLICK (optional but recommended)
-  if (contactOverlay) {
-    contactOverlay.addEventListener("click", () => {
-      contactSection.style.display = "none";
-    });
-  }
-});
-
-
-contactBtns.forEach(btn => {
-  btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    contactSection.style.display = "block";
-    document.body.style.overflow = "hidden";
-  });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const contactSection = document.getElementById("contact");
-  const closeBtn = document.getElementById("contactClose");
   const overlay = document.querySelector(".contact-overlay");
 
+  if (!contactSection || !contactOpenBtns.length) return;
+
+  // OPEN
+  contactOpenBtns.forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+      contactSection.classList.add("active");
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  // CLOSE
   function closeContact() {
-    contactSection.style.display = "none";
+    contactSection.classList.remove("active");
     document.body.style.overflow = "";
   }
 
-  closeBtn?.addEventListener("click", closeContact);
+  contactCloseBtn?.addEventListener("click", closeContact);
   overlay?.addEventListener("click", closeContact);
 
-  document.addEventListener("keydown", (e) => {
+  document.addEventListener("keydown", e => {
     if (e.key === "Escape") closeContact();
   });
 });
 
 
-// ------- contact -form through Services page
+
+// ============ MOBILE MENU → OPEN MODALS =============
 document.addEventListener("DOMContentLoaded", () => {
-  if (window.location.hash === "#contact") {
-    const contactBtn = document.getElementById("contactBtn");
-    contactBtn?.click();
-  }
+
+  const mobileMenu = document.getElementById("mobileMenu");
+  const menuToggle = document.getElementById("menuToggle");
+
+  // CONTACT
+  document.querySelectorAll(".contact-btn").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+
+      // close mobile menu
+      mobileMenu?.classList.remove("active");
+      menuToggle?.classList.remove("active");
+      document.body.classList.remove("menu-open");
+      document.documentElement.classList.remove("menu-open");
+
+      // open contact modal
+      const contact = document.getElementById("contact");
+      if (contact) {
+        contact.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+    });
+  });
+
+  // REQUEST VERIFICATION
+  document.querySelectorAll(".request-verification-btn").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+
+      // close mobile menu
+      mobileMenu?.classList.remove("active");
+      menuToggle?.classList.remove("active");
+      document.body.classList.remove("menu-open");
+      document.documentElement.classList.remove("menu-open");
+
+      // open verification modal
+      const modal = document.getElementById("verificationModal");
+      if (modal) {
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+    });
+  });
+
 });
 

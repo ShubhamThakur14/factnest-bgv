@@ -369,3 +369,29 @@ body.menu-open {
     padding-top: 50px;
   }
 }
+
+
+
+/* ===== CONTACT MODAL ===== */
+#contact {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+
+#contact.active {
+  display: flex;
+}
+
+/* ===== REQUEST VERIFICATION MODAL ===== */
+.verification-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+
+.verification-modal.active {
+  display: flex;
+}
