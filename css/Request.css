@@ -108,6 +108,13 @@
   display: block;
 }
 
+/* ===== FIX: MODAL NAVBAR GAP ===== */
+.verification-modal.active {
+  align-items: flex-start;   
+  padding-top: 90px;        
+}
+
+
 .verification-submit {
   width: 100%;
   padding: 0.9rem;
@@ -143,6 +150,8 @@
 }
 
 
+
+
 /* --- Req. Thanks-msg---  */
 .verification-success {
   display: none;
@@ -171,5 +180,46 @@
   color: #475569;
 }
 
+
+/* ===== MOBILE: REQUEST VERIFICATION TEXT SCALE ===== */
+@media (max-width: 768px) {
+
+  /* Modal title */
+  .verification-box h2 {
+    font-size: 1.25rem;   /* desktop ~1.6rem */
+    line-height: 1.4;
+  }
+
+  /* Sub text */
+  .verification-subtext {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  /* Section headings (Company Details, Verification Required etc.) */
+  .verification-box h4 {
+    font-size: 1rem;
+  }
+
+  /* Labels + checkbox text */
+  .verification-row .label-text,
+  .verification-box label,
+  .consent-line span {
+    font-size: 0.85rem;
+  }
+
+  /* Inputs, select, textarea */
+  .verification-box input,
+  .verification-box select,
+  .verification-box textarea {
+    font-size: 0.85rem;
+  }
+
+  /* Submit button */
+  .verification-submit {
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+  }
+}
 
 
