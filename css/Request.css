@@ -1,4 +1,11 @@
 /* ===== REQUEST VERIFICATION MODAL ===== */
+html.modal-open,
+body.modal-open {
+  overflow: hidden;
+  height: 100%;
+}
+
+
 
 .verification-modal {
   display: none;
@@ -23,7 +30,7 @@
   position: relative;
   background: #ffffff;
   width: 100%;
-  max-width: 36rem;
+  max-width: 40rem;
   max-height: 90vh;
   overflow-y: auto;
   padding: 2rem;
@@ -111,7 +118,7 @@
 /* ===== FIX: MODAL NAVBAR GAP ===== */
 .verification-modal.active {
   align-items: flex-start;   
-  padding-top: 90px;        
+  padding-top: 40px;        
 }
 
 
@@ -147,6 +154,7 @@
   .verification-box {
     padding: 1.5rem;
     max-height: 80vh;
+    width: 90%;
   }
 }
 
@@ -187,7 +195,7 @@
 
   /* Modal title */
   .verification-box h2 {
-    font-size: 1.25rem;   /* desktop ~1.6rem */
+    font-size: 1.5rem;   
     line-height: 1.4;
   }
 
@@ -199,7 +207,7 @@
 
   /* Section headings (Company Details, Verification Required etc.) */
   .verification-box h4 {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   /* Labels + checkbox text */
@@ -221,6 +229,68 @@
     font-size: 0.9rem;
     padding: 0.75rem 1rem;
   }
+
+   .verification-modal.active {
+    align-items: flex-start;
+    padding-top: 80px;
+}
 }
 
 
+/* for hiding the scroll bar  */
+.verification-box {
+  scrollbar-width: none;        
+  -ms-overflow-style: none;  
+}
+
+.verification-box::-webkit-scrollbar {
+  display: none;               
+}
+
+@media (min-width: 769px) and (max-width: 1024px){
+  .verification-modal.active {
+    align-items: flex-start;
+    padding-top: 80px;
+}
+
+.verification-box {
+    padding: 1.5rem;
+    max-height: 80vh;
+  }
+/* Modal title */
+  .verification-box h2 {
+    font-size: 1.8rem;   
+    line-height: 1.4;
+  }
+
+  /* Sub text */
+  .verification-subtext {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* Section headings (Company Details, Verification Required etc.) */
+  .verification-box h4 {
+    font-size: 1.2rem;
+  }
+
+  /* Labels + checkbox text */
+  .verification-row .label-text,
+  .verification-box label,
+  .consent-line span {
+    font-size: 1rem;
+  }
+
+  /* Inputs, select, textarea */
+  .verification-box input,
+  .verification-box select,
+  .verification-box textarea {
+    font-size: 0.85rem;
+  }
+
+  /* Submit button */
+  .verification-submit {
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+  }
+}
