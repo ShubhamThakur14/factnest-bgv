@@ -1296,9 +1296,34 @@ margin-top:5rem ;
 
 /* menu -section  */
 @media (max-width: 768px) {
+  
   .mobile-menu {
     border-radius: 16px;
-    transform: scale(1); /* mobile pe normal */
+    transform: scale(1); 
+  }
+  .hero-section .hero-buttons a {
+    padding: 0.6rem 0.9rem;   
+    font-size: 0.85rem;      
+    border-radius: 0.6rem;
   }
 }
 
+/* Request-btn in Hero section  */
+@media (max-width: 1024px) {
+  .hero-section .request-verification-btn {
+    display: inline-flex;
+  }
+
+  .hero-section .hero-buttons {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+
+  .hero-section .hero-buttons a {
+   
+    text-align: center;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+}

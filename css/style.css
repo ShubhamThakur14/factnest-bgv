@@ -1026,3 +1026,8 @@ p, input, textarea {
   color: #1d4ed8;
   font-weight: 600;
 }
+
+
+.hero-section .request-verification-btn {
+  display: none;
+}
