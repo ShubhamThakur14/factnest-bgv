@@ -1290,4 +1290,10 @@ padding-top: 6rem;
 }
 
 
-/* Detials- Services sections  */
+/* menu -section  */
+@media (max-width: 768px) {
+  .mobile-menu {
+    border-radius: 16px;
+    transform: scale(1); /* mobile pe normal */
+  }
+}

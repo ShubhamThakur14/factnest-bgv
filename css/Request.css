@@ -146,6 +146,7 @@
 @media (max-width: 768px) {
   .verification-box {
     padding: 1.5rem;
+    max-height: 80vh;
   }
 }
 

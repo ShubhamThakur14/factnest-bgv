@@ -1,28 +1,45 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const openBtn = document.getElementById("requestVerificationBtn");
+
+  /* ================= SELECTORS ================= */
   const modal = document.getElementById("verificationModal");
+  const openBtns = document.querySelectorAll(
+    "#requestVerificationBtn, a[href='#request-verification']"
+  );
   const closeBtn = document.getElementById("verificationClose");
   const overlay = document.querySelector(".verification-overlay");
   const form = document.getElementById("verificationForm");
   const successBox = document.getElementById("verificationSuccess");
 
+  const mobileMenu = document.getElementById("mobileMenu");
+  const menuToggle = document.getElementById("menuToggle");
+
   if (!modal) return;
 
   /* ================= OPEN MODAL ================= */
-  openBtn?.addEventListener("click", (e) => {
-    e.preventDefault();
+  function openModal(e) {
+    e?.preventDefault();
+
+    // close mobile menu if open
+    mobileMenu?.classList.remove("active");
+    menuToggle?.classList.remove("active");
+    document.documentElement.classList.remove("menu-open");
+
     modal.classList.add("active");
-    document.body.style.overflow = "hidden";
+    document.body.classList.add("modal-open");
 
     // reset state
-    form.style.display = "block";
-    successBox.style.display = "none";
+    if (form) form.style.display = "block";
+    if (successBox) successBox.style.display = "none";
+  }
+
+  openBtns.forEach(btn => {
+    btn.addEventListener("click", openModal);
   });
 
   /* ================= CLOSE MODAL ================= */
   function closeModal() {
     modal.classList.remove("active");
-    document.body.style.overflow = "";
+    document.body.classList.remove("modal-open");
   }
 
   closeBtn?.addEventListener("click", closeModal);
@@ -36,40 +53,18 @@ document.addEventListener("DOMContentLoaded", () => {
   form?.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    // 👉 yahan future me API / backend lagega
-    // abhi sirf UI flow
-
-    // hide form
     form.style.display = "none";
-
-    // show professional success message
     successBox.style.display = "block";
-    successBox.scrollIntoView({ behavior: "smooth", block: "center" });
+
+    successBox.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
   });
-});
 
-
-// Request-btn through menu 
-
-document.addEventListener("DOMContentLoaded", () => {
-
-  const verificationModal = document.getElementById("verificationModal");
-  const verificationClose = document.getElementById("verificationClose");
-  const verificationOverlay = document.querySelector(".verification-overlay");
-
-  // 🔥 AUTO OPEN via URL
+  /* ================= AUTO OPEN VIA URL ================= */
   if (window.location.hash === "#request-verification") {
-    verificationModal?.classList.add("active");
-    document.body.style.overflow = "hidden";
+    openModal();
   }
-
-  // CLOSE modal
-  function closeVerification() {
-    verificationModal?.classList.remove("active");
-    document.body.style.overflow = "";
-  }
-
-  verificationClose?.addEventListener("click", closeVerification);
-  verificationOverlay?.addEventListener("click", closeVerification);
 
 });

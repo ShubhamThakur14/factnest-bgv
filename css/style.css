@@ -973,3 +973,56 @@ p, input, textarea {
 }
 
 
+/*  menu- update*/
+.mobile-menu {
+  background: #f9fafb;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  border-radius: 18px;
+  transform: scale(0.98);
+}
+
+.mobile-menu a,
+.mobile-menu .dropdown-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 14px 18px;
+  margin-bottom: 12px;
+
+  background: #ffffff;
+  border-radius: 14px;
+
+  font-weight: 500;
+  color: #1f3a5f;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s ease;
+}
+
+.mobile-menu a:active,
+.mobile-menu .dropdown-toggle:active {
+  transform: scale(0.97);
+  background: #f0f4ff;
+}
+
+.mobile-menu .arrow {
+  font-size: 14px;
+  opacity: 0.6;
+}
+.mobile-menu .dropdown-menu {
+  margin-top: 6px;
+  padding-left: 10px;
+}
+
+.mobile-menu .dropdown-menu a {
+  background: #f9fafb;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.mobile-menu a:last-of-type {
+  background: #eef4ff;
+  color: #1d4ed8;
+  font-weight: 600;
+}
