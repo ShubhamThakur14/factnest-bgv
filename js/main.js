@@ -73,18 +73,88 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ================= SERVICES SLIDER ================= */
-  const slider = document.getElementById("servicesSlider");
+ /* ================= SERVICES SLIDER (FINAL & WORKING) ================= */
 
-  if (slider) {
-    window.slideLeft = () => {
-      slider.scrollBy({ left: -380, behavior: "smooth" });
-    };
+const slider = document.getElementById("servicesSlider");
+const prevBtn = document.querySelector(".services-arrow.prev");
+const nextBtn = document.querySelector(".services-arrow.next");
+const dotsWrap = document.getElementById("servicesDots");
 
-    window.slideRight = () => {
-      slider.scrollBy({ left: 380, behavior: "smooth" });
-    };
+if (slider && dotsWrap) {
+  const cards = slider.querySelectorAll(".service-card");
+  let currentIndex = 0;
+  const gap = 32;
+
+  /* ===== CREATE DOTS ===== */
+  dotsWrap.innerHTML = "";
+  cards.forEach((_, i) => {
+    const dot = document.createElement("span");
+    dot.className = "dot";
+    if (i === 0) dot.classList.add("active");
+
+    dot.addEventListener("click", () => goTo(i));
+    dotsWrap.appendChild(dot);
+  });
+
+  const dots = dotsWrap.querySelectorAll(".dot");
+
+  /* ===== UPDATE DOTS ===== */
+  function updateDots() {
+    dots.forEach(d => d.classList.remove("active"));
+    dots[currentIndex]?.classList.add("active");
   }
+
+  /* ===== UPDATE ARROWS (IMPORTANT PART) ===== */
+  function updateArrows() {
+    prevBtn?.classList.toggle("disabled", currentIndex === 0);
+    nextBtn?.classList.toggle(
+      "disabled",
+      currentIndex === cards.length - 1
+    );
+  }
+
+  /* ===== GO TO SLIDE ===== */
+  function goTo(i) {
+    const cardWidth = cards[0].offsetWidth + gap;
+
+    slider.scrollTo({
+      left: cardWidth * i,
+      behavior: "smooth"
+    });
+
+    currentIndex = i;
+    updateDots();
+    updateArrows();
+  }
+
+  /* ===== ARROW EVENTS ===== */
+  nextBtn?.addEventListener("click", () => {
+    if (currentIndex < cards.length - 1) {
+      goTo(currentIndex + 1);
+    }
+  });
+
+  prevBtn?.addEventListener("click", () => {
+    if (currentIndex > 0) {
+      goTo(currentIndex - 1);
+    }
+  });
+
+  /* ===== SYNC ON MANUAL SCROLL ===== */
+  slider.addEventListener("scroll", () => {
+    const cardWidth = cards[0].offsetWidth + gap;
+    const i = Math.round(slider.scrollLeft / cardWidth);
+
+    if (i !== currentIndex) {
+      currentIndex = i;
+      updateDots();
+      updateArrows();
+    }
+  });
+
+  /* ===== INITIAL STATE ===== */
+  updateArrows();
+}
 
   /* ================= PREVENT SCROLL WHEN MENU OPEN ================= */
   document.addEventListener(

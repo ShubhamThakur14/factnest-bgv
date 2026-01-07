@@ -300,6 +300,67 @@ body.menu-open {
   text-decoration: underline;
 }
 
+
+/* ===== SERVICES SLIDER CONTROLS ===== */
+
+.services-slider-wrapper {
+  position: relative;
+}
+
+.services-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  border: none;
+  background: #2dd4bf;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.services-arrow.prev {
+  left: -1.25rem;
+}
+
+.services-arrow.next {
+  right: -1.25rem;
+}
+
+/* ===== SERVICES DOTS ===== */
+.services-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+
+.services-dots .dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: #94a3b8; /* visible grey */
+  cursor: pointer;
+}
+
+.services-dots .dot.active {
+  background: #2dd4bf; /* brand blue */
+}
+
+/* Disabled arrow state */
+.services-arrow.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+
+
+
+
 /* ------ why CHOOSE fACTNEST========= */
 
 .why-section {
