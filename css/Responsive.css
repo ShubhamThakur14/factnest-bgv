@@ -1094,6 +1094,10 @@ padding-top: 6rem;
 
 @media (min-width: 769px) and (max-width: 1024px) {
 
+  .contact-section .container{
+margin-top:5rem ;
+  }
+
   .contact-wrapper {
     grid-template-columns: 1fr;
     gap: .5rem;
