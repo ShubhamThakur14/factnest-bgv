@@ -23,49 +23,43 @@ document.addEventListener("DOMContentLoaded", () => {
   const dropdownOptions = customDropdown?.querySelectorAll(".dropdown-options li");
 
   /* ================= CORE FUNCTION ================= */
+function activateService(id, label = "") {
 
-  function activateService(id, scroll = false, label = "") {
+  // Right side content
+  serviceContents.forEach(section =>
+    section.classList.toggle("active", section.id === id)
+  );
 
-    // 1️⃣ Right side content
-    serviceContents.forEach(section =>
-      section.classList.toggle("active", section.id === id)
-    );
+  // Sidebar active
+  serviceLinks.forEach(link =>
+    link.classList.toggle("active", link.dataset.target === id)
+  );
 
-    // 2️⃣ Desktop sidebar active
-    serviceLinks.forEach(link =>
-      link.classList.toggle("active", link.dataset.target === id)
-    );
-
-    // 3️⃣ Native select sync (safe)
-    if (mobileSelect) {
-      mobileSelect.value = id;
-    }
-
-    // 4️⃣ Custom dropdown text sync
-    if (dropdownText && label) {
-      dropdownText.textContent = label;
-    }
-
-    // 5️⃣ Optional scroll
-    if (scroll) {
-      document.getElementById(id)?.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }
+  // Mobile select sync (future safe)
+  if (mobileSelect) {
+    mobileSelect.value = id;
   }
+
+  // Custom dropdown text
+  if (dropdownText && label) {
+    dropdownText.textContent = label;
+  }
+
+  // ❌ NO scroll here (IMPORTANT)
+}
+
 
   /* ================= DESKTOP SIDEBAR ================= */
 
-  serviceLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      activateService(
-        link.dataset.target,
-        true,
-        link.textContent.trim()
-      );
-    });
+serviceLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    activateService(
+      link.dataset.target,
+      link.textContent.trim()
+    );
   });
+});
+
 
   /* ================= CUSTOM MOBILE DROPDOWN ================= */
 
@@ -78,7 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const target = option.dataset.value;
       const label = option.textContent.trim();
 
-      activateService(target, true, label);
+      activateService(target, label);
+
 
       customDropdown.classList.remove("active");
     });
@@ -144,7 +139,6 @@ mobileMenuLinks.forEach(link => {
 });
 
 // ===== HEADER SERVICES DROPDOWN SUPPORT =====
-/* ================= HEADER SERVICES SUPPORT ================= */
 document
   .querySelectorAll(".desktop-dropdown-menu a, .mobile-menu .dropdown-menu a")
   .forEach(link => {
@@ -154,19 +148,12 @@ document
       const target = link.dataset.target;
       if (!target) return;
 
-      // activate same as sidebar
       document.querySelectorAll(".service-content").forEach(section => {
         section.classList.toggle("active", section.id === target);
       });
 
       document.querySelectorAll(".service-link").forEach(item => {
         item.classList.toggle("active", item.dataset.target === target);
-      });
-
-      // scroll to content
-      document.getElementById("services")?.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
       });
     });
   });
