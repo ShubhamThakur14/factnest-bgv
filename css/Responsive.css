@@ -419,9 +419,8 @@ padding-top: 6rem;
 /* ==== Our SErvices  */
 @media (max-width: 768px) {
   .services-section {
-    
-    padding-left:50px ;
-    padding-right: 50px;
+    padding-left:30px ;
+    padding-right: 30px;
      padding-top: 12px;
     padding-bottom: 22px;
     border-top-left-radius: 36px;
@@ -436,14 +435,14 @@ padding-top: 6rem;
     margin-left: 0;
   }
     .services-slider {
-    gap: 18px;
+    gap: 30px;
     padding-left: 0px;
     padding-right: 0px;
   }
      .service-card {
     min-width: 100%;
     max-width: 100%;
-    padding: 16px 18px;
+    padding: 60px 60px;
     border-radius: 16px;
   }
    .service-card .icon {
@@ -465,6 +464,14 @@ padding-top: 6rem;
   }
 }
 
+@media (max-width: 600px) {
+   
+  
+  .service-card{
+min-width: 100%;
+    max-width: 100%;
+    padding: 50px 50px;
+    }
 
 /* ---- Our Services for Tablet */
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -479,6 +486,7 @@ padding-top: 6rem;
 
 
 
+}
 /* ===== Why Factnest */
 @media (max-width: 768px) {
   .why-section{

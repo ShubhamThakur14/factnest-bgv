@@ -257,7 +257,7 @@ body.menu-open {
 .service-card {
   background: #fff;
   min-width: 22.5rem; /* 360px */
-  padding: 1.25rem 2.25rem; /* 20px 36px */
+  padding: 3rem 1.25rem; /* 20px 36px */
   border-radius: 1.25rem; /* 20px */
   box-shadow: 0 0.625rem 1.875rem rgba(0,0,0,0.08); /* 10px 30px */
   display: flex;
@@ -283,21 +283,23 @@ body.menu-open {
 }
 
 .service-card p {
-  font-size: 0.96875rem; /* 15.5px */
+  font-size: 0.86875rem; /* 15.5px */
   line-height: 1.7;
   color: #475569;
   flex-grow: 1;
+  margin-bottom: 4rem; /* 16px */
 }
 
-.service-link {
+.fade-up a {
   margin-top: 1.75rem; /* 28px */
   font-weight: 600;
-  color: #2dd4bf;
-  text-decoration: none;
+   text-decoration: none;
+     color: #244c86;
 }
 
-.service-link:hover {
+.fade-up a:hover {
   text-decoration: underline;
+  color:#2dd4bf ;
 }
 
 
@@ -306,6 +308,11 @@ body.menu-open {
 .services-slider-wrapper {
   position: relative;
 }
+
+.services-slider {
+  overflow: hidden;       
+}
+
 
 .services-arrow {
   position: absolute;
@@ -923,9 +930,7 @@ p, input, textarea {
   user-select: text;
 }
 
-.fade-up a{
-  color: #244c86;
-}
+
 
 /* Close btn in contact */
 .contact-section {
