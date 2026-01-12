@@ -1,3 +1,9 @@
+// 🔒 prevent browser default hash jump
+if (window.location.hash) {
+  window.scrollTo(0, 0);
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
 
   /* ================= SELECTORS ================= */
@@ -110,4 +116,41 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
 
+});
+
+/* ================= HASH SCROLL SUPPORT ================= */
+
+if (window.location.hash) {
+  const targetEl = document.querySelector(window.location.hash);
+
+  if (targetEl) {
+    setTimeout(() => {
+      targetEl.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }, 300);
+  }
+}
+
+/* ================= PRESERVE OTHER SCROLL ================= */
+
+const otherSection = document.getElementById("other");
+
+// restore scroll on reload
+if (otherSection && serviceParam === "other") {
+  const savedScroll = sessionStorage.getItem("otherScrollTop");
+  if (savedScroll) {
+    setTimeout(() => {
+      otherSection.scrollTop = parseInt(savedScroll, 10);
+    }, 50);
+  }
+}
+
+// save scroll position
+otherSection?.addEventListener("scroll", () => {
+  sessionStorage.setItem(
+    "otherScrollTop",
+    otherSection.scrollTop
+  );
 });

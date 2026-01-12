@@ -31,10 +31,16 @@ h4 {
 
 /* ===== LAYOUT ===== */
 .services-layout {
-  display: grid;
+    display: grid;
   grid-template-columns: 18rem 1fr;
   gap: 3rem;
+  align-items: start;
 }
+
+.services-sidebar{
+  height: fit-content;
+}
+
 
 /* ===== SIDEBAR ===== */
 .services-sidebar {
@@ -91,6 +97,14 @@ h4 {
 .service-content {
   display: none;
   animation: fadeUp 0.35s ease;
+}
+.services-content {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  padding: 3rem;
+  box-shadow: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.06);
+
+  min-height: 400px; 
 }
 
 .service-content.active {
@@ -355,6 +369,10 @@ body.menu-open {
   content: none !important;
 }
 
+
+
+  
+
 /* ================= FIX: HEADER OVERLAP ================= */
 
 
@@ -394,4 +412,12 @@ body.menu-open {
 
 .verification-modal.active {
   display: flex;
+}
+
+
+/* ONLY Other Checks scrollable */
+#other {
+  max-height: 65vh;        /* screen ke hisaab se height */
+  overflow-y: auto;        /* vertical scroll */
+  padding-right: 10px;     /* scrollbar ke liye space */
 }
