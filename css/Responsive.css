@@ -368,7 +368,7 @@ padding-top: 6rem;
 }
 @media (max-width: 768px) {
   .hero-content h1 {
-    font-size: 30px;
+    font-size: 3.2rem;
     line-height: 1.22;
     margin-bottom: 6px;
   }
@@ -429,7 +429,7 @@ padding-top: 6rem;
   
   }
    .services-section .section-title {
-    font-size: 28px;
+    font-size: 2.5rem;
     margin-bottom: 24px;
     text-align: left;
     margin-left: 0;
@@ -1343,3 +1343,51 @@ margin-top:5rem ;
     font-size: 1rem;
   }
 }
+
+
+/* Size of Enterprises  */
+/* ===== TABLET VIEW FIX ===== */
+@media (min-width: 768px) and (max-width: 1024px){
+
+  .services-section-alt{
+    padding:80px 16px;
+  }
+
+  .services-title{
+    font-size:2.4rem;
+    margin-bottom:50px;
+  }
+
+  .services-grid-alt{
+    grid-template-columns:repeat(2, 1fr); /* ⭐ 2 cards per row */
+    gap:28px;
+  }
+
+  .service-box{
+    padding:48px 26px;   /* thoda tall look */
+    border-radius:14px;
+  }
+
+  .service-box .icon{
+    width:68px;
+    height:68px;
+    margin-bottom:22px;
+  }
+
+  .service-box h3{
+    font-size:1.45rem;
+    margin-bottom:12px;
+  }
+
+  .service-box p{
+    font-size:.95rem;
+    margin-bottom:68px;
+  }
+
+  .btn-red{
+    padding:11px 26px;
+    font-size:.95rem;
+    
+  }
+}
+
