@@ -1141,6 +1141,12 @@ p, input, textarea {
   align-items:stretch;
 }
 
+@media (min-width: 1024px){
+  .services-grid-alt{
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 
 
 /* Card */
