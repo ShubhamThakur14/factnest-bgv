@@ -627,21 +627,13 @@
   }
 }
 
- /* ===== Solution Page Filtering ===== */
-.solution-block {
-  display: none;
-}
-
-.solution-block.active {
-  display: block;
-} 
 
 
 
 /* ================= SMB HERO ================= */
 .smb-hero{
   background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
-  padding: 5rem 2rem;
+  padding: 3rem 3rem;
 }
 
 .smb-hero-inner{
@@ -662,7 +654,7 @@
 }
 
 .smb-hero-text h1 span{
-  color: #1f4fa3;
+  color: #2dd4bf;
 }
 
 .smb-hero-lead{
@@ -732,7 +724,7 @@
 /* ================= SMB CHALLENGES – PRO ================= */
 
 .smb-challenges-pro {
-  padding: 4rem 3rem;
+  padding: 3rem;
   background: #f8fafc;
 }
 
@@ -751,7 +743,7 @@
 }
 
 .smb-ch-header h2 span {
-  color: #1f4fa3;
+  color: #2dd4bf;
 }
 
 .smb-ch-header p {
@@ -821,7 +813,7 @@
 }
 /* ================= SMB SOLUTION VISUAL ================= */
 .smb-solution-visual {
-  padding: 5rem 3rem;
+  padding: 3rem 3rem;
   background: #f8fafc;
 }
 
@@ -840,7 +832,7 @@
 }
 
 .smb-solution-head h2 span {
-  color: #1f4fa3;
+  color: #2dd4bf;
 }
 
 .smb-solution-head p {
@@ -957,7 +949,7 @@
 
 .smb-pricing-left h2 span {
   display: block;
-  color: #1f4fa3;
+  color: #2dd4bf;
 }
 
 .smb-pricing-left p {
@@ -1075,7 +1067,8 @@
 
 .smb-faq-left h2 span {
   display: block;
-  color: #1f4fa3;
+  color: #2dd4bf
+  ;
 }
 
 .smb-faq-left p {
@@ -1155,4 +1148,314 @@
   .smb-faq-left h2 {
     font-size: 2rem;
   }
+}
+
+/* ===========================Enterprise Section ================================= *//* =====================================================
+   ENTERPRISE – HERO SECTION
+===================================================== */
+.enterprise-hero {
+  padding: 4.5rem 3rem;
+  background: #f8fafc;
+}
+
+.enterprise-hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.enterprise-hero-text h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1.4rem;
+  letter-spacing: -0.02em;
+}
+
+.enterprise-hero-text h1 span {
+  color: #1f4fa3;
+}
+
+.enterprise-hero-text .lead {
+  font-size: 1.1rem;
+  color: #475569;
+  line-height: 1.8;
+  margin-bottom: 1.8rem;
+}
+
+.enterprise-highlights {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2.2rem;
+}
+
+.enterprise-highlights li {
+  font-size: 1rem;
+  color: #0f172a;
+  margin-bottom: 0.6rem;
+}
+
+/* right visual cards */
+.enterprise-hero-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.visual-card {
+  padding: 1.6rem 1.8rem;
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2.5rem rgba(0,0,0,0.06);
+  font-weight: 600;
+  color: #1f4fa3;
+}
+
+/* =====================================================
+   ENTERPRISE – CHALLENGES
+===================================================== */
+.enterprise-challenges {
+  padding: 4.5rem 3rem;
+  background: #ffffff;
+}
+
+.enterprise-challenges h2 {
+  font-size: 2.3rem;
+  color: #0f172a;
+  margin-bottom: 3rem;
+}
+
+.enterprise-challenges-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.challenge-item {
+  padding: 2rem;
+  background: #f8fafc;
+  border-left: 4px solid #1f4fa3;
+  border-radius: 1rem;
+}
+
+.challenge-item h4 {
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+  color: #0f172a;
+}
+
+.challenge-item p {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   ENTERPRISE – INDUSTRIES (TABS)
+===================================================== */
+.enterprise-industries {
+  padding: 4rem 3rem;
+  background: #f8fafc;
+}
+
+.industry-header {
+  max-width: 52rem;
+  margin-bottom: 3rem;
+}
+
+.industry-header h2 {
+  font-size: 2.4rem;
+  margin-bottom: 0.8rem;
+  color: #0f172a;
+}
+
+.industry-header p {
+  font-size: 1.05rem;
+  color: #475569;
+}
+
+.industry-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.industry-tab {
+  padding: 0.65rem 1.3rem;
+  border-radius: 0.6rem;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.industry-tab.active {
+  background: #2dd4bf;
+  color: #083344;
+  border-color: #2dd4bf;
+}
+
+.industry-content {
+  background: #ffffff;
+  border-radius: 1.4rem;
+  padding: 3rem;
+}
+
+.industry-panel {
+  display: none;
+}
+
+.industry-panel.active {
+  display: block;
+}
+
+.industry-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.industry-grid h3 {
+  font-size: 1.7rem;
+  margin-bottom: 0.8rem;
+}
+
+.industry-grid p {
+  font-size: 1rem;
+  color: #475569;
+  margin-bottom: 1.2rem;
+}
+
+.industry-grid ul {
+  padding-left: 1.2rem;
+}
+
+.industry-grid li {
+  margin-bottom: 0.5rem;
+  color: #0f172a;
+}
+
+.industry-visual {
+  height: 240px;
+  border-radius: 1.2rem;
+  background: linear-gradient(135deg,#1f4fa3,#2dd4bf);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* =====================================================
+   ENTERPRISE – SCALABLE SOLUTIONS
+===================================================== */
+.enterprise-solutions {
+  padding: 4rem 3rem;
+  background: #ffffff;
+}
+
+.enterprise-solutions h2 {
+  font-size: 2.3rem;
+  margin-bottom: 2.5rem;
+}
+
+.enterprise-solution-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.solution-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  background: #f8fafc;
+  border-radius: 1rem;
+  box-shadow: 0 0.8rem 2rem rgba(0,0,0,0.05);
+  font-size: 0.95rem;
+}
+
+/* =====================================================
+   ENTERPRISE – CTA
+===================================================== */
+.enterprise-cta {
+  padding: 5rem 1.5rem;
+  background: linear-gradient(135deg, #1f4fa3, #2dd4bf);
+  color: #ffffff;
+  text-align: center;
+}
+
+.enterprise-cta-inner h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.enterprise-cta-inner p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* =====================================================
+   IMAGE HIDE – MOBILE
+===================================================== */
+@media (max-width: 600px) {
+  .enterprise-hero-visual,
+  .industry-visual {
+    display: none !important;
+  }
+}
+
+/* =====================================================
+   ENTERPRISE – MOBILE RESPONSIVE
+===================================================== */
+@media (max-width: 768px) {
+
+  .enterprise-hero,
+  .enterprise-challenges,
+  .enterprise-industries,
+  .enterprise-solutions {
+    padding: 2.5rem 1.2rem;
+  }
+
+  .enterprise-hero-grid,
+  .enterprise-challenges-grid,
+  .industry-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .enterprise-hero-text h1,
+  .enterprise-challenges h2,
+  .enterprise-solutions h2 {
+    font-size: 1.7rem;
+    line-height: 1.3;
+  }
+
+  .enterprise-hero-text .lead,
+  .challenge-item p,
+  .industry-grid p {
+    font-size: 0.95rem;
+  }
+
+  .solution-row {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+}
+
+/* hidden sections */
+/* Hide all solution sections by default */
+.solution-block {
+  display: none;
+}
+
+/* Show only active section */
+.solution-block.active {
+  display: block;
 }

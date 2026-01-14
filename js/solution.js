@@ -118,3 +118,46 @@ document.querySelectorAll(".open-contact").forEach(btn => {
     document.body.style.overflow = "hidden";
   });
 });
+
+
+// Changing sector in Enterprises
+
+  const tabs = document.querySelectorAll(".industry-tab");
+  const panels = document.querySelectorAll(".industry-panel");
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      panels.forEach(p => p.classList.remove("active"));
+
+      tab.classList.add("active");
+      document.getElementById(tab.dataset.target).classList.add("active");
+    });
+  });
+
+
+//   Magic-section Loading section by Read more 
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const selectedSection = params.get("section");
+
+  const allSections = document.querySelectorAll(".solution-block");
+
+  // Hide all sections
+  allSections.forEach(section => {
+    section.classList.remove("active");
+  });
+
+  // If section param exists, show only that
+  if (selectedSection) {
+    const target = document.getElementById(selectedSection);
+    if (target) {
+      target.classList.add("active");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  } else {
+    // Fallback (optional) – show individual by default
+    const defaultSection = document.getElementById("individual");
+    defaultSection?.classList.add("active");
+  }
+});
