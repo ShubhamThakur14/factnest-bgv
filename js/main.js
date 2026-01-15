@@ -379,46 +379,46 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ================(Scroll up count for Why Trust us section ====
-document.addEventListener("DOMContentLoaded", () => {
-  const counters = document.querySelectorAll(".metric-strip strong");
-  let started = false;
+// document.addEventListener("DOMContentLoaded", () => {
+//   const counters = document.querySelectorAll(".metric-strip strong");
+//   let started = false;
 
-  function startCountUp() {
-    if (started) return;
+//   function startCountUp() {
+//     if (started) return;
 
-    counters.forEach(counter => {
-      const target = +counter.getAttribute("data-value");
-      let count = 0;
+//     counters.forEach(counter => {
+//       const target = +counter.getAttribute("data-value");
+//       let count = 0;
 
-      const speed = target > 100 ? 10 : 30;
+//       const speed = target > 100 ? 10 : 30;
 
-      const updateCount = () => {
-        const increment = Math.ceil(target / speed);
-        count += increment;
+//       const updateCount = () => {
+//         const increment = Math.ceil(target / speed);
+//         count += increment;
 
-        if (count < target) {
-          counter.innerText = count;
-          requestAnimationFrame(updateCount);
-        } else {
-          counter.innerText = target;
-        }
-      };
+//         if (count < target) {
+//           counter.innerText = count;
+//           requestAnimationFrame(updateCount);
+//         } else {
+//           counter.innerText = target;
+//         }
+//       };
 
-      updateCount();
-    });
+//       updateCount();
+//     });
 
-    started = true;
-  }
+//     started = true;
+//   }
 
-  const observer = new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting) {
-      startCountUp();
-      observer.disconnect();
-    }
-  }, { threshold: 0.4 });
+//   const observer = new IntersectionObserver(entries => {
+//     if (entries[0].isIntersecting) {
+//       startCountUp();
+//       observer.disconnect();
+//     }
+//   }, { threshold: 0.4 });
 
-  observer.observe(document.querySelector(".metric-strip"));
-});
+//   observer.observe(document.querySelector(".metric-strip"));
+// });
 
 // Accortion for Why -section 
 
@@ -484,7 +484,7 @@ setInterval(() => {
     textEl.style.opacity = 1;
   }, 300);
 
-}, 6000);
+}, 4000);
 
 
 // Change content on Click -Dot 
