@@ -139,6 +139,7 @@
   .individual-intro {
     grid-template-columns: 1fr;
     text-align: center;
+    padding: 2rem 2rem;
   }
 
   .intro-cta {
@@ -613,7 +614,7 @@
   .individual-intro {
     grid-template-columns: 1fr;
     gap: 2.5rem;
-    padding: 3.5rem 0;
+    padding: 5.5rem 2rem;
   }
 
   .individual-for,
@@ -702,6 +703,10 @@
 
 /* RESPONSIVE */
 @media (max-width: 900px){
+
+  .smb-hero{
+    padding-top: 6rem;
+  }
   .smb-hero-inner{
     grid-template-columns: 1fr;
     text-align: center;
@@ -1154,7 +1159,7 @@
    ENTERPRISE – HERO SECTION
 ===================================================== */
 .enterprise-hero {
-  padding: 4.5rem 3rem;
+  padding: 4.5rem 2rem;
   background: #f8fafc;
 }
 
@@ -1233,7 +1238,7 @@
 }
 
 .challenge-item {
-  padding: 2rem;
+  padding: 1rem;
   background: #f8fafc;
   border-left: 4px solid #1f4fa3;
   border-radius: 1rem;
@@ -1351,6 +1356,41 @@
   text-align: center;
 }
 
+.industry-visual {
+  height: 260px;
+  border-radius: 1.2rem;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* Industry-wise images */
+.tech-visual {
+  background-image: url("../img/ITandTechimg.png");
+}
+
+.finance-visual {
+  background-image: url("../img/Tech.png");
+}
+
+.staffing-visual {
+  background-image: url("../img/Global.png");
+}
+
+.manufacturing-visual {
+  background-image: url("../img/Manufacture.png");
+}
+
+.healthcare-visual {
+  background-image: url("../img/Healthcare.png");
+}
+
+.platforms-visual {
+  background-image: url("../img/Security.png");
+}
+
+
+
 /* =====================================================
    ENTERPRISE – SCALABLE SOLUTIONS
 ===================================================== */
@@ -1400,26 +1440,23 @@
   margin-bottom: 2rem;
 }
 
-/* =====================================================
-   IMAGE HIDE – MOBILE
-===================================================== */
-@media (max-width: 600px) {
-  .enterprise-hero-visual,
-  .industry-visual {
-    display: none !important;
-  }
-}
+
 
 /* =====================================================
    ENTERPRISE – MOBILE RESPONSIVE
 ===================================================== */
 @media (max-width: 768px) {
 
-  .enterprise-hero,
+  .enterprise-hero{
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+  }
+
   .enterprise-challenges,
   .enterprise-industries,
   .enterprise-solutions {
-    padding: 2.5rem 1.2rem;
+    padding: 2rem 1.2rem;
+    
   }
 
   .enterprise-hero-grid,
@@ -1432,8 +1469,9 @@
 
   .enterprise-hero-text h1,
   .enterprise-challenges h2,
-  .enterprise-solutions h2 {
-    font-size: 1.7rem;
+  .enterprise-solutions h2,
+  .industry-header h2 {
+    font-size: 2.2rem;
     line-height: 1.3;
   }
 
@@ -1458,4 +1496,45 @@
 /* Show only active section */
 .solution-block.active {
   display: block;
+}
+
+/* ================= MOBILE IMAGE OPTIMIZATION ================= */
+@media (max-width: 768px) {
+
+  /* COMMON IMAGE FIX */
+  .intro-image,
+  .smb-image,
+  .industry-visual {
+    display: block;
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+
+  .intro-image img,
+  .smb-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+  }
+
+  /* INDUSTRY SECTION IMAGE */
+  .industry-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .industry-visual {
+    height: 180px; /* 👈 compact height */
+    border-radius: 14px;
+  }
+
+  /* TEXT SPACING */
+  .industry-grid h3 {
+    font-size: 1.4rem;
+  }
+
+  .industry-grid p,
+  .industry-grid li {
+    font-size: 0.95rem;
+  }
 }
