@@ -378,3 +378,153 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+// ================(Scroll up count for Why Trust us section ====
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll(".metric-strip strong");
+  let started = false;
+
+  function startCountUp() {
+    if (started) return;
+
+    counters.forEach(counter => {
+      const target = +counter.getAttribute("data-value");
+      let count = 0;
+
+      const speed = target > 100 ? 10 : 30;
+
+      const updateCount = () => {
+        const increment = Math.ceil(target / speed);
+        count += increment;
+
+        if (count < target) {
+          counter.innerText = count;
+          requestAnimationFrame(updateCount);
+        } else {
+          counter.innerText = target;
+        }
+      };
+
+      updateCount();
+    });
+
+    started = true;
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      startCountUp();
+      observer.disconnect();
+    }
+  }, { threshold: 0.4 });
+
+  observer.observe(document.querySelector(".metric-strip"));
+});
+
+// Accortion for Why -section 
+
+document.querySelectorAll(".why-header").forEach(header => {
+  header.addEventListener("click", () => {
+    const item = header.parentElement;
+
+    document.querySelectorAll(".why-item").forEach(el => {
+      if (el !== item) {
+        el.classList.remove("active");
+        el.querySelector(".why-icon").textContent = "+";
+      }
+    });
+
+    item.classList.toggle("active");
+    header.querySelector(".why-icon").textContent =
+      item.classList.contains("active") ? "×" : "+";
+  });
+});
+
+
+//Complience seciton Auto box change
+
+const complianceContent = [
+  {
+    title: "Data Privacy & Confidentiality",
+    text: "All candidate information is handled with strict confidentiality and processed only for authorized verification purposes."
+  },
+  {
+    title: "Legal & Regulatory Alignment",
+    text: "Our verification workflows are aligned with applicable employment, data protection, and background screening regulations."
+  },
+  {
+    title: "Secure Systems & Access Control",
+    text: "Controlled system access, secure storage, and internal checks ensure data integrity throughout the verification lifecycle."
+  },
+  {
+    title: "Audit-Ready Reporting",
+    text: "Every verification is traceable, documented, and review-ready to support audits and compliance requirements."
+  }
+];
+
+let currentIndex = 0;
+
+const titleEl = document.getElementById("complianceCardTitle");
+const textEl = document.getElementById("complianceCardText");
+const dots = document.querySelectorAll(".compliance-dots .dot");
+
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % complianceContent.length;
+
+  titleEl.style.opacity = 0;
+  textEl.style.opacity = 0;
+
+  setTimeout(() => {
+    titleEl.textContent = complianceContent[currentIndex].title;
+    textEl.textContent = complianceContent[currentIndex].text;
+
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[currentIndex].classList.add("active");
+
+    titleEl.style.opacity = 1;
+    textEl.style.opacity = 1;
+  }, 300);
+
+}, 6000);
+
+
+// Change content on Click -Dot 
+document.addEventListener("DOMContentLoaded", () => {
+
+  const complianceContent = [
+    {
+      title: "Data Privacy & Confidentiality",
+      text: "All candidate information is handled with strict confidentiality and processed only for authorized verification purposes."
+    },
+    {
+      title: "Legal & Regulatory Alignment",
+      text: "Our verification workflows are aligned with applicable employment, data protection, and background screening regulations."
+    },
+    {
+      title: "Secure Systems & Access Control",
+      text: "Controlled system access, secure storage, and internal checks ensure data integrity throughout the verification lifecycle."
+    },
+    {
+      title: "Audit-Ready Reporting",
+      text: "Every verification is traceable, documented, and review-ready to support audits and compliance requirements."
+    }
+  ];
+
+  const titleEl = document.getElementById("complianceCardTitle");
+  const textEl = document.getElementById("complianceCardText");
+  const dots = document.querySelectorAll(".compliance-dots .dot");
+
+  if (!titleEl || !textEl || !dots.length) return;
+
+  dots.forEach(dot => {
+    dot.addEventListener("click", () => {
+      const index = dot.getAttribute("data-index");
+
+      titleEl.textContent = complianceContent[index].title;
+      textEl.textContent = complianceContent[index].text;
+
+      dots.forEach(d => d.classList.remove("active"));
+      dot.classList.add("active");
+    });
+  });
+
+});
