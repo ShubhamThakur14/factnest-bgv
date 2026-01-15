@@ -977,7 +977,7 @@ body.menu-open {
 /* ========== FOOTER ========== */
 
 .clean-footer {
-  background: #f0fdfa;
+  background: #d9f9f2;
   border-radius: 1.75rem;
   margin: 2.5rem 1.5rem;
   padding: 3.75rem 2.5rem 1.875rem;
@@ -995,17 +995,17 @@ body.menu-open {
 .footer-logo {
   display: flex;
   align-items: center;
-  font-size: 1.4375rem;
+  font-size: 2rem;
   font-weight: 800;
   color: #0f172a;
 }
 
 .footer-logo img {
-  height: 1.875rem;
+  height: 2rem;
 }
 
 .footer-logo span {
-  line-height: 1;
+  line-height: 2;
 }
 
 .footer-logo .fact {
@@ -1018,7 +1018,7 @@ body.menu-open {
 
 .footer-brand p {
   margin-top: 0.875rem;
-  font-size: 1.03125rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   color: #475569;
   max-width: 22.5rem;
@@ -1027,20 +1027,16 @@ body.menu-open {
 .footer-social {
   margin-top: 0.875rem;
   display: flex;
-  gap: 0.875rem;
+  gap: 1.5rem;
 }
 
-.footer-social a {
-  text-decoration: none;
-  color: #475569;
-  font-size: 1rem;
-}
 
 .footer-links h4 {
-  font-size: 1.125rem;
+  font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 0.875rem;
   color: #2B5794;
+ margin-top: 10px;
 }
 
 .footer-links a {
@@ -1049,6 +1045,7 @@ body.menu-open {
   font-size: 1rem;
   color: #475569;
   margin-bottom: 0.625rem;
+  font-weight: 500;
 }
 
 .footer-links a:hover {
@@ -1063,12 +1060,14 @@ body.menu-open {
   justify-content: space-between;
   font-size: 0.8125rem;
   color: #64748b;
+  font-weight: 500;
 }
 
 .bottom-links a {
   margin-left: 1.125rem;
   text-decoration: none;
   color: #64748b;
+  font-size: 1rem;
 }
 
 .bottom-links a:hover {
@@ -1077,7 +1076,6 @@ body.menu-open {
 
 .footer-social {
   display: flex;
-  gap: 1rem;
   margin-top: 1rem;
 }
 
@@ -1090,8 +1088,9 @@ body.menu-open {
   align-items: center;
   justify-content: center;
   color: #2B5794;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   transition: all 0.25s ease;
+  text-decoration: none;
 }
 
 .footer-social a:hover {
@@ -1430,7 +1429,7 @@ p, input, textarea {
 
 .refined-content h2 {
   font-size: 2.5rem;      /* 40px */
-  font-weight: 700;
+  font-weight: 800;
   color: #1f4fa3;
   margin-bottom: 0.875rem; /* 14px */
 }
@@ -1549,6 +1548,7 @@ p, input, textarea {
 
   .refined-content h2 {
     font-size: 2.125rem; /* 34px */
+    
   }
 }
 
