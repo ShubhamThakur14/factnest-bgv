@@ -1,0 +1,490 @@
+/* ================================
+   GLOBAL CONTAINER
+================================ */
+.fn-container {
+  max-width: 75rem;              /* 1200px */
+  margin: auto;
+  padding: 0 1.25rem;            /* 20px */
+}
+
+/* ================================
+   HERO SECTION (FULL SCREEN)
+================================ */
+.fn-about-hero {
+  min-height: calc(100vh - 5rem); /* header approx 80px */
+  display: flex;
+  padding: 3rem 3rem;
+  align-items: center;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f8fafc 100%
+  );
+}
+
+/* HERO GRID */
+.fn-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 3.75rem;                  /* 60px */
+  width: 100%;
+}
+
+/* HERO LEFT CONTENT */
+.fn-hero-content {
+  max-width: 37.5rem;            /* 600px */
+}
+
+.fn-hero-tag {
+  font-size: 0.8125rem;          /* 13px */
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #2dd4bf;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.fn-hero-title {
+  font-size: 2.75rem;            /* 44px */
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1e3a8a;
+  margin-bottom: 1.25rem;
+}
+
+.fn-hero-title span {
+  color: #2dd4bf;
+}
+
+.fn-hero-text {
+  font-size: 1.0625rem;          /* 17px */
+  line-height: 1.7;
+  color: #475569;
+}
+
+/* HERO RIGHT IMAGE */
+.fn-hero-image img {
+  width: 100%;
+  max-width: 30rem;              /* 480px */
+  display: block;
+  margin-left: auto;
+}
+
+/* ================================
+   COMMON SECTION SPACING
+================================ */
+.fn-about-block,
+.fn-process,
+.fn-trust {
+  padding: 5.625rem 0;           /* 90px */
+}
+
+/* ================================
+   APPROACH SECTION – FACTNEST LIGHT
+================================ */
+.fn-approach-section {
+  padding: 3rem;
+  background: linear-gradient(
+    180deg,
+    #f8fafc 0%,
+    #ffffff 100%
+  );
+  color: #0f172a;
+}
+
+/* GRID */
+.fn-approach-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem;
+  align-items: flex-start;
+}
+
+/* EYEBROW */
+.fn-eyebrow {
+  font-size: 2.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #1e3a8a;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+/* TITLE */
+.fn-approach-title {
+  font-size: clamp(2.1rem, 3.5vw, 2.8rem);
+  line-height: 1.25;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #0f172a;
+}
+
+/* LEAD */
+.fn-approach-lead {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #1e293b;
+  margin-bottom: 1.75rem;
+}
+
+/* BODY TEXT */
+.fn-approach-text {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #475569;
+  margin-top: 1.5rem;
+  max-width: 40rem;
+}
+
+
+
+/* RIGHT SIDE */
+.fn-approach-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-left: 2.5rem;
+  border-left: 0.125rem solid rgba(30, 58, 138, 0.12);
+}
+
+/* STEPS */
+.fn-approach-step h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-bottom: 0.4rem;
+}
+
+.fn-approach-step p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #475569;
+}
+
+
+
+/* ================================
+   APPROACH PILLARS – FIXED
+================================ */
+.fn-approach-pillars {
+  padding: 7rem 0;
+  background: #ffffff;
+}
+
+/* HEADER */
+.fn-approach-header {
+  text-align: center;
+  max-width: 42rem;
+  margin: 0 auto 4rem;
+}
+
+.fn-approach-header h2 {
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 1rem;
+}
+
+.fn-approach-header p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #475569;
+}
+
+/* GRID */
+.fn-process-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+/* CARD */
+.fn-approach-card {
+  background: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 1.25rem;
+  transition: all 0.25s ease;
+}
+
+.fn-approach-card:hover {
+  transform: translateY(-0.4rem);
+  background: #ffffff;
+  box-shadow: 0 1.5rem 3rem rgba(15, 23, 42, 0.08);
+}
+
+/* ICON WRAPPER (IMPORTANT) */
+.fn-approach-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+/* ICON IMAGE */
+.fn-approach-icon img {
+  width: 50px;
+  height: auto;
+  display: block;
+}
+
+/* TITLE */
+.fn-approach-card h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+/* TEXT */
+.fn-approach-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #475569;
+  text-align: center;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+
+
+
+
+
+
+
+/* =========================================================================================================== */
+.fn-about-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.fn-about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      45rem 45rem at 80% 30%,
+      rgba(45, 212, 191, 0.12),
+      transparent 60%
+    );
+  z-index: 0;
+}
+
+.fn-about-hero .fn-container {
+  position: relative;
+  z-index: 1;
+}
+
+
+.fn-hero-trust {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+  font-size: 0.9375rem;
+  color: #334155;
+  flex-wrap: wrap;
+}
+
+
+
+.fn-hero-image img {
+  background: transparent;
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+  
+}
+
+
+
+
+
+
+.fn-hero-title {
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  line-height: 1.15;
+}
+
+
+
+.fn-hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2.25rem;
+}
+
+.fn-btn-primary {
+  background: #1e3a8a;
+  color: #ffffff;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  font-size: 0.9375rem;
+  text-decoration: none;
+}
+
+.fn-btn-secondary {
+  color: #1e3a8a;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.fn-btn-secondary:hover {
+  border-color: #1e3a8a;
+}
+
+
+.fn-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+/* PRIMARY */
+.fn-btn-primary {
+  background: #1e3a8a;
+  color: #ffffff;
+  padding: 0.875rem 1.875rem;
+  border-radius: 999px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.fn-btn-primary:hover {
+  background: #162e6f;
+}
+
+/* SECONDARY (VIEW SERVICES) */
+.fn-btn-outline {
+  padding: 0.875rem 1.875rem;
+  border-radius: 999px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #1e3a8a;
+  border: 0.09375rem solid rgba(30, 58, 138, 0.3);
+  text-decoration: none;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.fn-btn-outline:hover {
+  background: #2dd4bf;
+  border-color: #2dd4bf;
+  color: black ;
+}
+
+
+/* responsive */
+@media (max-width: 64rem) { /* 1024px */
+
+  /* HERO */
+  .fn-about-hero {
+    min-height: auto;
+    padding: 5rem 2.5rem;
+  }
+
+  .fn-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .fn-hero-image img {
+    margin: 0 auto;
+    max-width: 24rem;
+  }
+
+  /* APPROACH SECTION (LEFT -> TOP, RIGHT -> BOTTOM) */
+  .fn-approach-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .fn-approach-right {
+    padding-left: 0;
+    border-left: none;
+    margin-top: 2rem;
+  }
+
+  /* PILLARS GRID */
+  .fn-approach-grid,
+  .fn-approach-pillars .fn-approach-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+ .fn-process-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+
+
+@media (max-width: 48rem) { /* 768px */
+
+  /* GLOBAL CONTAINER */
+  .fn-container {
+    padding: 0 1.25rem;
+  }
+
+  /* HERO (IMPORTANT REQUIREMENT ✔) */
+  .fn-about-hero {
+    padding: 6rem 2rem;
+  }
+
+  .fn-hero-title {
+    font-size: 2.1rem;
+  }
+
+  .fn-hero-text {
+    font-size: 1rem;
+  }
+
+  .fn-hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .fn-hero-image img {
+    max-width: 20rem;
+  }
+
+  /* COMMON SECTIONS */
+  .fn-about-block,
+  .fn-process,
+  .fn-trust,
+  .fn-approach-section,
+  .fn-approach-pillars {
+    padding: 4.5rem 0;
+  }
+
+  /* APPROACH SECTION */
+  .fn-approach-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fn-approach-title {
+    font-size: 2rem;
+  }
+
+  .fn-approach-right {
+    margin-top: 2rem;
+  }
+
+  /* PILLARS / CARDS */
+  .fn-approach-grid,
+  .fn-approach-pillars .fn-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fn-approach-card {
+    padding: 2rem;
+  }
+}
