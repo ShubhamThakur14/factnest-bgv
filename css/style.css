@@ -994,7 +994,7 @@ body.menu-open {
   max-width: 75rem;
   margin: auto;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
   gap: 3rem;
 }
 
@@ -1693,4 +1693,53 @@ p, input, textarea {
   .fn-overview-visual::before {
     inset: -1rem;
   }
+}
+
+
+/* Footer _ right */
+.fn-footer-cta h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-bottom: 0.5rem;
+}
+
+.fn-footer-cta p {
+  font-size: 0.9rem;
+  color: #475569;
+  margin-bottom: 1rem;
+}
+
+.fn-footer-form {
+  display: flex;
+  gap: 0.75rem;
+  
+}
+
+.fn-footer-form input {
+  padding: 0.6rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid #cbd5e1;
+  font-size: 0.9rem;
+}
+
+.fn-footer-form button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  border: none;
+  background: #1e3a8a;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.fn-footer-form {
+  display: flex;
+  flex-direction: column;   /* 👈 upar–niche */
+  gap: 0.75rem;
+  max-width: 20rem;         /* optional, clean look */
+}
+
+.fn-footer-form input,
+.fn-footer-form button {
+  width: 100%;
 }
