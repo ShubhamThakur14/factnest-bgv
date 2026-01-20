@@ -1,0 +1,327 @@
+/* ================================
+   PRIVACY HERO
+================================ */
+.privacy-hero {
+  background: #f1f5f9;
+  padding: 2.5rem 4rem 3rem;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.privacy-hero-content {
+  max-width: 40rem;
+}
+
+.privacy-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.4rem;
+  color: #475569;
+  text-decoration: none;
+  margin-bottom: 1.25rem;
+  font-weight: 500;
+}
+
+.privacy-back-btn:hover {
+  color: #1e3a8a;
+}
+
+.privacy-title {
+  font-size: clamp(2.4rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* RIGHT IMAGE */
+.privacy-hero-illustration img {
+  width: 100%;
+  max-width: 20rem;
+  margin-left: auto;
+  display: block;
+}
+
+/* ================================
+   PRIVACY CONTENT AREA
+================================ */
+.privacy-body {
+  padding: 2rem 0 4rem;
+  background: #f8fafc;
+}
+
+.privacy-container {
+  max-width: 74rem;
+  margin: auto;
+  padding: 0 1.5rem;
+  background: #f3f4f6;
+  border-radius: 1.25rem;
+  padding: 1rem 1.5rem;
+}
+
+/* SECTION HEADINGS */
+.privacy-container h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  color: #0f172a;
+}
+
+/* PARAGRAPHS */
+.privacy-container p {
+  font-size: 0.95rem;
+  color: #334155;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+/* LINKS */
+.privacy-container a {
+  color: #1e3a8a;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.privacy-container a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS */
+.privacy-container ul {
+  margin: 1rem 0 1.5rem 1.25rem;
+}
+
+.privacy-container li {
+  font-size: 0.95rem;
+  color: #334155;
+  margin-bottom: 0.5rem;
+}
+
+/* ================================
+   RESPONSIVE – PRIVACY
+================================ */
+@media (max-width: 64rem) {
+  .privacy-hero {
+    grid-template-columns: 1fr;
+    padding: 2.5rem 2rem 3rem;
+  }
+
+  .privacy-hero-illustration {
+    display: none;
+  }
+
+  .privacy-container {
+    padding: 4rem 2.5rem;
+  }
+}
+
+@media (max-width: 40rem) {
+  .privacy-hero {
+    padding: 6rem 2rem 2rem;
+  }
+
+  .privacy-title {
+    font-size: 2rem;
+  }
+
+  .privacy-container {
+    padding: 3rem 1.5rem;
+  }
+
+  .privacy-container h2 {
+    font-size: 1.2rem;
+  }
+
+  .privacy-container p,
+  .privacy-container li {
+    font-size: 0.92rem;
+  }
+}
+
+
+
+/* ================================================================================================== */
+/* ================================
+   GLOBAL RESET
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.7;
+}
+
+/* ================================
+   CONTAINER
+================================ */
+.fn-container {
+  max-width: 75rem; /* 1200px */
+  margin: auto;
+  padding: 0 1.5rem;
+}
+
+/* ================================
+   HERO SECTION
+================================ */
+.legal-hero {
+  background: #f1f5f9;
+  padding: 2.5rem 0 3rem;
+}
+
+.legal-hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+.legal-hero-left {
+  max-width: 40rem;
+}
+
+.legal-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  color: #475569;
+  text-decoration: none;
+  margin-bottom: 1.25rem;
+  font-weight: 500;
+}
+
+.legal-back:hover {
+  color: #1e3a8a;
+}
+
+.legal-title {
+  font-size: clamp(2.4rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* RIGHT IMAGE */
+.legal-hero-right img {
+  width: 100%;
+  max-width: 20rem;
+  margin-left: auto;
+  display: block;
+}
+
+/* ================================
+   CONTENT AREA
+================================ */
+.legal-content {
+  padding: 2rem 0 6rem;
+}
+
+.legal-box {
+  background: #f3f4f6;
+  border-radius: 1.25rem;
+  padding: 3rem 3.5rem;
+}
+
+/* SECTION HEADINGS */
+.legal-box h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-top: .5rem;
+  margin-bottom: 0.75rem;
+  color: #0f172a;
+}
+
+.legal-box h2:first-child {
+  margin-top: 0;
+}
+
+/* PARAGRAPHS */
+.legal-box p {
+  font-size: 0.95rem;
+  color: #334155;
+  margin-bottom: 1rem;
+}
+
+/* LINKS */
+.legal-box a {
+  color: #1e3a8a;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.legal-box a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS (if needed later) */
+.legal-box ul {
+  margin: 1rem 0 1.5rem 1.25rem;
+}
+
+.legal-box li {
+  font-size: 0.95rem;
+  color: #334155;
+  margin-bottom: 0.5rem;
+}
+
+
+.fn-back-btn{
+    display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.4rem;
+  color: #475569;
+  text-decoration: none;
+  margin-bottom: 1.25rem;
+  font-weight: 500;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 64rem) {
+  .legal-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .legal-hero{
+    padding: 6rem 2.5rem;
+  }
+
+  .legal-hero-right {
+    display: none;
+  }
+
+  .legal-box {
+    padding: 2.5rem;
+  }
+}
+
+@media (max-width: 40rem) {
+  .legal-hero {
+    padding: 6rem 0 2rem;
+  }
+
+  .legal-title {
+    font-size: 2rem;
+  }
+
+  .legal-box {
+    padding: 2rem 1.5rem;
+  }
+
+  .legal-box h2 {
+    font-size: 1.2rem;
+  }
+
+  .legal-box p {
+    font-size: 0.92rem;
+  }
+}
