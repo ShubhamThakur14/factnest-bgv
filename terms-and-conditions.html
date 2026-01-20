@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="32x32" href="/img/logo Head.PNG">
     <title>FactNest | Terms </title>
-    
+
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/Responsive.css">
   <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
@@ -317,8 +317,6 @@
   <div class="verification-overlay"></div>
 
   <div class="verification-box">
-
-    <!-- Close -->
     <button class="verification-close" id="verificationClose">✕</button>
 
     <h2>Request Background Verification</h2>
@@ -326,16 +324,21 @@
       Share your requirements and our verification team will reach out to you.
     </p>
 
-    <form id="verificationForm">
+    <form
+      id="verificationForm"
+      action="https://script.google.com/macros/s/AKfycbw6s-EoPUB5zrTnDS9kqplk-0vSiF8MCJV2dZbDS5ywhIsL9UnHoeaACKr0UCGTswi5tg/exec"
+      method="POST"
+      target="hidden_iframe"
+    >
 
       <!-- Company Details -->
       <h4>Company Details</h4>
-      <input type="text" placeholder="Company Name *" required>
-      <input type="email" placeholder="Official Email *" required>
-      <input type="tel" placeholder="Phone Number *" required>
-      <input type="text" placeholder="Company Location">
+      <input name="company" placeholder="Company Name *" required>
+      <input name="email" type="email" placeholder="Official Email *" required>
+      <input name="phone" placeholder="Phone Number *" required>
+      <input name="location" placeholder="Company Location">
 
-      <select required>
+      <select name="companyType" required>
         <option value="">Company Type</option>
         <option>Startup</option>
         <option>SME</option>
@@ -343,68 +346,67 @@
         <option>Consultancy / Vendor</option>
       </select>
 
-      <!-- Verification Types -->
-     <h4>Verification Required</h4>
+      <!-- Verification Required -->
+      <h4>Verification Required</h4>
 
-<div class="verification-group">
+      <div class="verification-group">
 
-  <label class="verification-row">
-    <span class="label-text">Identity Verification</span>
-    <input type="checkbox" name="verification[]" value="identity">
-  </label>
+        <label class="verification-row">
+          <span class="label-text">Identity</span>
+          <input type="checkbox" name="verification" value="Identity">
+        </label>
 
-  <label class="verification-row">
-    <span class="label-text">Address Verification</span>
-    <input type="checkbox" name="verification[]" value="address">
-  </label>
+        <label class="verification-row">
+          <span class="label-text">Address</span>
+          <input type="checkbox" name="verification" value="Address">
+        </label>
 
-  <label class="verification-row">
-    <span class="label-text">Employment Verification</span>
-    <input type="checkbox" name="verification[]" value="employment">
-  </label>
+        <label class="verification-row">
+          <span class="label-text">Employment</span>
+          <input type="checkbox" name="verification" value="Employment">
+        </label>
 
-  <label class="verification-row">
-    <span class="label-text">Education Verification</span>
-    <input type="checkbox" name="verification[]" value="education">
-  </label>
+        <label class="verification-row">
+          <span class="label-text">Education</span>
+          <input type="checkbox" name="verification" value="Education">
+        </label>
 
-  <label class="verification-row">
-    <span class="label-text">Criminal Record Check</span>
-    <input type="checkbox" name="verification[]" value="criminal">
-  </label>
+        <label class="verification-row">
+          <span class="label-text">Criminal</span>
+          <input type="checkbox" name="verification" value="Criminal">
+        </label>
 
-  <label class="verification-row">
-    <span class="label-text">Credit Check</span>
-    <input type="checkbox" name="verification[]" value="credit">
-  </label>
+        <label class="verification-row">
+          <span class="label-text">Credit</span>
+          <input type="checkbox" name="verification" value="Credit">
+        </label>
 
-</div>
+      </div>
 
-
-      <!-- Volume -->
+      <!-- Hiring Details -->
       <h4>Hiring Details</h4>
-      <select>
-        <option>Number of Candidates</option>
+      <select name="candidates">
         <option>1–10</option>
         <option>10–50</option>
         <option>50–200</option>
         <option>200+</option>
       </select>
 
-      <select>
-        <option>Expected Turnaround Time</option>
+      <select name="tat">
         <option>Standard</option>
         <option>Urgent</option>
         <option>Not sure</option>
       </select>
 
-      <textarea placeholder="Any specific requirement or compliance need?"></textarea>
+      <textarea
+        name="message"
+        placeholder="Any specific requirement or compliance need?"
+      ></textarea>
 
       <label class="consent-line">
-  <input type="checkbox" required>
-  <span>I confirm that candidate consent has been obtained.</span>
-</label>
-
+        <input type="checkbox" name="consent" value="Yes" required>
+        <span>I confirm that candidate consent has been obtained.</span>
+      </label>
 
       <button type="submit" class="verification-submit">
         Submit Verification Request
@@ -412,19 +414,17 @@
 
     </form>
 
-    <!-- Request - Thanks msg -->
+    <!-- hidden iframe -->
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
 
-     <div class="verification-success" id="verificationSuccess"  style="display:none;">
+    <!-- success message -->
+    <div class="verification-success" id="verificationSuccess" style="display:none;">
       <h3>Thank you for your verification request</h3>
       <p>
-        Our team has received your request and will contact you within
+        Our team will contact you within
         <strong>24 business hours</strong>.
       </p>
-      <p class="trust-text">
-        FactNest ensures secure, compliant, and confidential background verification.
-      </p>
     </div>
-
 
   </div>
 </section>
@@ -514,8 +514,8 @@
   <div class="footer-bottom">
     <span>© 2025 FactNest. All rights reserved.</span>
     <div class="bottom-links">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms-and-conditions.html">Terms of Services</a>
     </div>
   </div>
 </footer>

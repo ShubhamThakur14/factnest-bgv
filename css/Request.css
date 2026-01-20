@@ -5,8 +5,6 @@ body.modal-open {
   height: 100%;
 }
 
-
-
 .verification-modal {
   display: none;
   position: fixed;
@@ -18,26 +16,37 @@ body.modal-open {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 40px 16px;
 }
 
+/* Overlay */
 .verification-overlay {
   position: absolute;
   inset: 0;
   background: rgba(15, 23, 42, 0.7);
 }
 
+/* Modal Box */
 .verification-box {
   position: relative;
   background: #ffffff;
   width: 100%;
   max-width: 40rem;
   max-height: 90vh;
-  overflow-y: auto;
   padding: 2rem;
   border-radius: 1.5rem;
+  overflow-y: auto;
   z-index: 1;
+
+  /* Hide scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.verification-box::-webkit-scrollbar {
+  display: none;
 }
 
+/* Close Button */
 .verification-close {
   position: absolute;
   top: 1rem;
@@ -50,49 +59,25 @@ body.modal-open {
   font-size: 1.1rem;
   cursor: pointer;
 }
-.verification-group {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-top: 10px;
-}
 
-.verification-row {
-  display: flex;
-  justify-content: space-between; /* 🔥 text left, checkbox right */
-  align-items: center;
-  padding: 10px 14px;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  cursor: pointer;
-  background: #fff;
+/* Headings & Text */
+.verification-box h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
-
-.verification-row:hover {
-  background: #f0fdfa;
-  border-color: #2dd4bf;
-}
-
-.label-text {
-  font-size: 15px;
-  color: #0f172a;
-  font-weight: 500;
-}
-
-.verification-row input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  accent-color: #2dd4bf; /* teal theme */
-  cursor: pointer;
-}
-
 
 .verification-subtext {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #64748b;
   margin-bottom: 1.5rem;
 }
 
+.verification-box h4 {
+  font-size: 1.2rem;
+  margin: 1.2rem 0 0.5rem;
+}
+
+/* Inputs */
 .verification-box input,
 .verification-box select,
 .verification-box textarea {
@@ -101,37 +86,32 @@ body.modal-open {
   margin-bottom: 0.75rem;
   border-radius: 0.6rem;
   border: 1px solid #e5e7eb;
+  font-size: 0.9rem;
 }
 
-.verification-options {
-  display: grid;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+/* Checkbox group */
+.verification-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 10px 0 20px;
 }
 
-.verification-consent {
-  font-size: 0.85rem;
-  margin: 1rem 0;
-  display: block;
-}
-
-/* ===== FIX: MODAL NAVBAR GAP ===== */
-.verification-modal.active {
-  align-items: flex-start;   
-  padding-top: 40px;        
-}
-
-
-.verification-submit {
-  width: 100%;
-  padding: 0.9rem;
-  background: #2dd4bf;
-  border: none;
-  border-radius: 0.75rem;
-  font-weight: 600;
+.verification-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
   cursor: pointer;
 }
 
+.verification-group input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #2dd4bf;
+}
+
+/* Consent */
 .consent-line {
   display: flex;
   align-items: center;
@@ -142,26 +122,23 @@ body.modal-open {
 }
 
 .consent-line input {
-  margin: 0;
   width: 16px;
   height: 16px;
   cursor: pointer;
 }
 
-
-/* Mobile */
-@media (max-width: 768px) {
-  .verification-box {
-    padding: 1.5rem;
-    max-height: 80vh;
-    width: 90%;
-  }
+/* Submit Button */
+.verification-submit {
+  width: 100%;
+  padding: 0.9rem;
+  background: #2dd4bf;
+  border: none;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-
-
-
-/* --- Req. Thanks-msg---  */
+/* Success Message */
 .verification-success {
   display: none;
   margin-top: 30px;
@@ -181,7 +158,6 @@ body.modal-open {
 .verification-success p {
   font-size: 15px;
   color: #334155;
-  margin: 6px 0;
 }
 
 .verification-success .trust-text {
@@ -189,108 +165,163 @@ body.modal-open {
   color: #475569;
 }
 
-
-/* ===== MOBILE: REQUEST VERIFICATION TEXT SCALE ===== */
+/* ===== MOBILE (≤768px) ===== */
 @media (max-width: 768px) {
-
-  /* Modal title */
-  .verification-box h2 {
-    font-size: 1.5rem;   
-    line-height: 1.4;
-  }
-
-  /* Sub text */
-  .verification-subtext {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-
-  /* Section headings (Company Details, Verification Required etc.) */
-  .verification-box h4 {
-    font-size: 1.2rem;
-  }
-
-  /* Labels + checkbox text */
-  .verification-row .label-text,
-  .verification-box label,
-  .consent-line span {
-    font-size: 0.85rem;
-  }
-
-  /* Inputs, select, textarea */
-  .verification-box input,
-  .verification-box select,
-  .verification-box textarea {
-    font-size: 0.85rem;
-  }
-
-  /* Submit button */
-  .verification-submit {
-    font-size: 0.9rem;
-    padding: 0.75rem 1rem;
-  }
-
-   .verification-modal.active {
-    align-items: flex-start;
-    padding-top: 80px;
-}
-}
-
-
-/* for hiding the scroll bar  */
-.verification-box {
-  scrollbar-width: none;        
-  -ms-overflow-style: none;  
-}
-
-.verification-box::-webkit-scrollbar {
-  display: none;               
-}
-
-@media (min-width: 769px) and (max-width: 1024px){
   .verification-modal.active {
     align-items: flex-start;
     padding-top: 80px;
-}
+  }
 
-.verification-box {
+  .verification-box {
     padding: 1.5rem;
     max-height: 80vh;
   }
-/* Modal title */
+
   .verification-box h2 {
-    font-size: 1.8rem;   
-    line-height: 1.4;
+    font-size: 1.5rem;
   }
 
-  /* Sub text */
-  .verification-subtext {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-
-  /* Section headings (Company Details, Verification Required etc.) */
   .verification-box h4 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
-  /* Labels + checkbox text */
-  .verification-row .label-text,
-  .verification-box label,
-  .consent-line span {
-    font-size: 1rem;
-  }
-
-  /* Inputs, select, textarea */
   .verification-box input,
   .verification-box select,
   .verification-box textarea {
     font-size: 0.85rem;
   }
 
-  /* Submit button */
   .verification-submit {
     font-size: 0.9rem;
-    padding: 0.75rem 1rem;
   }
 }
+
+/* ===== TABLET (769px–1024px) ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .verification-modal.active {
+    align-items: flex-start;
+    padding-top: 80px;
+  }
+
+  .verification-box {
+    max-height: 85vh;
+    padding: 1.75rem;
+  }
+
+  .verification-box h2 {
+    font-size: 1.8rem;
+  }
+
+}
+
+
+/*  form update */
+/* ===== FIX: SELECT DROPDOWN OVERFLOW (MOBILE + TABLET) ===== */
+
+.verification-box select {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Prevent select from creating huge native popup width */
+.verification-box {
+  overflow-x: hidden;
+}
+
+/* Mobile specific fix */
+@media (max-width: 1024px) {
+  .verification-box select {
+    font-size: 16px; /* iOS zoom + layout fix */
+    max-width: 100%;
+  }
+}
+
+/* Extra safety for iOS & Android */
+@supports (-webkit-touch-callout: none) {
+  .verification-box select {
+    max-width: 100%;
+  }
+}
+
+
+/* ----- */
+/* ===== CUSTOM DROPDOWN (REPLACES NATIVE SELECT) ===== */
+
+.custom-select {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+/* Trigger box (looks like input/select) */
+.select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.6rem;
+  background: #ffffff;
+  cursor: pointer;
+  color: #0f172a;
+}
+
+.select-trigger .arrow {
+  font-size: 0.8rem;
+  color: #64748b;
+  transition: transform 0.2s ease;
+}
+
+/* Rotate arrow when open */
+.custom-select.active .arrow {
+  transform: rotate(180deg);
+}
+
+/* Dropdown options */
+.select-options {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.6rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  display: none;
+  z-index: 50;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+/* Show options */
+.custom-select.active .select-options {
+  display: block;
+}
+
+/* Option item */
+.select-options div {
+  padding: 10px 14px;
+  cursor: pointer;
+  color: #0f172a;
+  font-size: 0.9rem;
+}
+
+/* Hover state */
+.select-options div:hover {
+  background: #f0fdfa;
+}
+
+/* ===== MOBILE + TABLET SAFE ===== */
+@media (max-width: 1024px) {
+
+  .select-trigger {
+    font-size: 0.9rem;
+  }
+
+  .select-options {
+    max-height: 200px;
+  }
+}
+

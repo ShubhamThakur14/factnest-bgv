@@ -161,3 +161,6 @@ document.addEventListener("DOMContentLoaded", () => {
     defaultSection?.classList.add("active");
   }
 });
+
+
+

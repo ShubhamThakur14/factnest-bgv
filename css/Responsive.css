@@ -1391,3 +1391,41 @@ margin-top:5rem ;
   }
 }
 
+/* New changes in form */
+
+
+.verification-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.verification-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* text left, checkbox right */
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  cursor: pointer;
+  background: #fff;
+}
+
+.verification-row:hover {
+  background: #f0fdfa;
+  border-color: #2dd4bf;
+}
+
+.label-text {
+  font-size: 15px;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.verification-row input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #2dd4bf;
+  cursor: pointer;
+}
