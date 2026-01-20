@@ -152,7 +152,7 @@ body.menu-open {
 /* ====== HERO SECTION ========= */
 
 .hero-section {
-  padding: 5rem 3.125rem; /* 90px 50px */
+  padding: 4rem 3.125rem; /* 90px 50px */
 }
 
 .hero-container {
@@ -165,7 +165,7 @@ body.menu-open {
 }
 
 .hero-content h1 {
-  font-size: 3.125rem; /* 50px */
+  font-size: 3.5rem; /* 50px */
   line-height: 1.2;
   color: #1f4fa3;
 }
@@ -862,7 +862,7 @@ body.menu-open {
 .compliance-wrapper {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  gap: 5.625rem;
+  gap: 11rem;
   align-items: flex-start;
 }
 
@@ -1052,6 +1052,7 @@ body.menu-open {
   color: #475569;
   margin-bottom: 0.625rem;
   font-weight: 500;
+
 }
 
 .footer-links a:hover {
@@ -1069,11 +1070,13 @@ body.menu-open {
   font-weight: 500;
 }
 
+
 .bottom-links a {
   margin-left: 1.125rem;
   text-decoration: none;
   color: #64748b;
   font-size: 1rem;
+ 
 }
 
 .bottom-links a:hover {
